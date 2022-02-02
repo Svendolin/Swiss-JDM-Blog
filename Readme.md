@@ -3,7 +3,7 @@
 ---
 
 
-![GitHub commit activity](https://img.shields.io/github/commit-activity/m/Svendolin/JDM-Blog-Website?style=for-the-badge) ![GitHub contributors](https://img.shields.io/github/contributors/svendolin/JDM-Blog-Website?style=for-the-badge) ![GitHub forks](https://img.shields.io/github/forks/Svendolin/JDM-Blog-Website?color=pink&style=for-the-badge) ![GitHub last commit](https://img.shields.io/github/last-commit/Svendolin/JDM-Blog-Website?style=for-the-badge) ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/Svendolin/JDM-Blog-Website?color=yellow&style=for-the-badge)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/m/Svendolin/Swiss-JDM-Blog?style=for-the-badge) ![GitHub contributors](https://img.shields.io/github/contributors/svendolin/Swiss-JDM-Blog?style=for-the-badge) ![GitHub forks](https://img.shields.io/github/forks/Svendolin/Swiss-JDM-Blog?color=pink&style=for-the-badge) ![GitHub last commit](https://img.shields.io/github/last-commit/Svendolin/Swiss-JDM-Blog?style=for-the-badge) ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/Svendolin/Swiss-JDM-Blog?color=yellow&style=for-the-badge)
 ***
 This JDM Blogging Page should contain:
 
@@ -92,7 +92,6 @@ Each user should provide the following information via registration form in orde
 
 |Folder   |Content  |
 | ---   | ---   |
-|.readme| All kind of information about the project |
 |admin| Admin area (index.php) to delete and modify user profiles (user.php) and blogposts (blogposts.php) |
 |blogpost_images|Local storage of blogpost images (temporary folder)|
 |favicon|All favicon symbols for each devices|
