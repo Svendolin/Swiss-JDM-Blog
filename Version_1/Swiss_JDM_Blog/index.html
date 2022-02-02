@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-------------------------------------- BASIC HTML5 TAG FOR RESPONSIVENESS -------------------------------------->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-------------------------------------- META TAG -------------------------------------->
+  <meta name="keywords" content="JDM Blog Website using PHP and MySQL">
+  <meta name="description" content="This SAE Modul Project needs to be build up with PHP and MySQL so here we go :D">
+  <meta name="author" content="Svendolin">
+  <title>Swiss JDM Blog</title>
+  <!-------------------------------------- CDN FONTAWESOME ICONS (Keep me updated) -------------------------------------->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-------------------------------------- GOOGLE FONTS LINK -------------------------------------->
+  <link href="https://fonts.googleapis.com/css2?family=Abel&family=Lexend:wght@200;300;400;500;700&family=Nunito:wght@300;400;600;700;800&family=Permanent+Marker&display=swap" rel="stylesheet">
+  <!-------------------------------------- OWL-CAROUSEL -------------------------------------->
+  <link rel="stylesheet" type="text/css" media="screen" href="theme/css/owl.carousel.min.css">
+  <link rel="stylesheet" type="text/css" media="screen" href="theme/css/owl.theme.default.min.css">
+  <!-------------------------------------- AOS Library CSS ---------------------------------->
+  <!-- (Animate on scroll) https://michalsnik.github.io/aos/ > download > dist > copy js and css -->
+  <link rel="stylesheet" href="theme/css/aos.css">
+  <!-------------------------------------- CSS LINK -------------------------------------->
+  <link rel="stylesheet" type="text/css" media="screen" href="theme/css/style.css">
+  <!-------------------------------------- CSS LINK TO SEPERATE MEDIA QUERY PAGE -------------------------------------->
+  <link rel="stylesheet" type="text/css" media="screen" href="theme/css/mediaqueries.css">
+  <!-------------------------------------- Favicon -------------------------------------->
+  <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+  <!-------------------------------------- JQUERY / JAVASCRIPT CONNECTION -------------------------------------->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+  <!-------------------------------------- OWL-CAROUSEL JQUERY -------------------------------------->
+  <script src="theme/javascript/owl.carousel.min.js" defer></script>
+  <!-------------------------------------- AOS Library JS -------------------------------------->
+  <script src="theme/javascript/aos.js" defer></script>
+  <!-------------------------------------- JS CONNECTION -------------------------------------->
+  <script src="theme/javascript/main.js" defer></script>
+  
+
+</head>
+<body>
+  <!--------- NAVIGATION ------------------------------------------------------------------------------------------>
+  
+  <nav class="nav">
+    <div class="nav-menu flex-row">
+      <div class="nav-brand">
+        <a href="index.html" class="logo">Swiss JDM Blog</a> <!-- text or image -->
+      </div>
+      <!-- toggle burger -->
+      <div class="toggle-collapse">
+        <div class="toggle-icons">
+          <i class="fas fa-bars"></i>
+          <i class="fa-solid fa-xmark"></i> <!-- For responsive TODO -->
+        </div>
+      </div>
+      <div>
+        <ul class="nav-items">
+          <li class="nav-link">
+            <a href="#">Home</a>
+          </li>
+          <li class="nav-link">
+            <a href="#">Blogposts</a>
+          </li>
+          <li class="nav-link">
+            <a href="#">Memberboard</a>
+          </li>
+        </ul>
+      </div>
+      <div class="login text-gray">
+        <a href="#">Login</a>
+      </div>
+    </div>
+  </nav>
+
+  <!---x---- NAVIGATION ----x-------------------------------------------------------------------------------------->
+  <!-------- MAIN SITE SECTION ------------------------------------------------------------------------------------>
+
+  <main>
+    <!---------- Site Title ------------->
+    <section class="site-title">
+      <div class="site-background" data-aos="fade-up" data-aos-delay="100">
+        <span>Where JDM enthusiasts come together</span>
+        <h1>Tell your story</h1>
+        <button class="btn" role="button" aria-label="explore">Explore</button>
+      </div>
+    </section>
+
+    <!-----x---- Site Title ----x-------->
+    <!---------- Blog Carousel (Newsflash) ------------->
+
+    <section>
+      <div class="blog">
+        <h2 class="title">Newsflash</h2>
+        <div class="container"> <!-- Container for the items -->
+          <div class="owl-carousel owl-theme blog-post"> <!-- 3 Classes: Owl items + theme + blog posts -->
+            <!-- Auslagern mit PHP -->
+            <div class="blog-content blog1" data-aos="fade-right" data-aos-delay="200">
+              <img src="assets/newsflash/JDM1.jpg" alt="post 1">
+              <div class="blog-title">
+                <h3>"Godzilla has arrived!"</h3>
+                <button class="btn btn1" role="button" aria-label="read more">Read More</button>
+                <span>9th of June 2021</span>
+              </div>
+            </div>
+
+            <div class="blog-content blog2" data-aos="fade-in" data-aos-delay="200">
+              <img src="assets/newsflash/JDM2.jpg" alt="post 2">
+              <div class="blog-title">
+                <h3>"Slapsticker time!"</h3>
+                <button class="btn btn2" role="button" aria-label="read more">Read More</button>
+                <span>17th of July 2021</span>
+              </div>
+            </div>
+
+            <div class="blog-content blog3" data-aos="fade-left" data-aos-delay="200">
+              <img src="assets/newsflash/JDM3.jpg" alt="post 3">
+              <div class="blog-title">
+                <h3>"Visited his Brother!"</h3>
+                <button class="btn btn3" role="button" aria-label="read more">Read More</button>
+                <span>30th of September 2021</span>
+              </div>
+            </div>
+
+            <div class="blog-content blog4" data-aos="fade-right" data-aos-delay="200">
+              <img src="assets/newsflash/JDM4.jpg" alt="post 4">
+              <div class="blog-title">
+                <h3>"Time for some NOS ;)"</h3>
+                <button class="btn btn4" role="button" aria-label="read more">Read More</button>
+                <span>5th of November 2021</span>
+              </div>
+            </div>
+          
+          
+          </div> 
+          <div class="owl-navigation">
+            <span class="owl-nav-prev" role="slider" aria-label="true"><i class="fas fa-long-arrow-alt-left"></i></span>
+            <span class="owl-nav-next" role="slider" aria-label="true"><i class="fas fa-long-arrow-alt-right"></i></span>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+
+    <!-----x---- Blog Carousel (Newsflash) ----x-------->
+    <!---------- Site Content (Blog) + Sidebar ------------->
+
+    <!-- Post 1 -->
+    <section class="container"> <!-- Blog Container -->
+      <div class="site-content"> <!-- Gets displayed with grid -->
+        <div class="posts">
+          <h2 class="title-main">Featured Blog Posts</h2>
+           <div class="post-content" data-aos="zoom-in" data-aos-delay="200"> <!-- Whole Content post per post -->
+            <div class="post-image"> <!-- Image of the post for PHP and post information -->
+              <div>
+                <img class="img" src="/assets/blog-posts/180sx.jpg" alt="Silvan's Nissan 180sx">
+              </div>
+              <div class="post-info flex-row"> <!-- Post infobox -->
+                <span><i class="fas fa-user text-gray"></i>&nbsp;&nbsp;Sillest</span>
+                <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;September 3, 2021</span>
+                <span>2 Comments</span>
+              </div>
+            </div>
+            <div class="post-title"> <!-- Title and textbox of each post -->
+              <a href="#">When was the last time we met each other?!? </a>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Laboriosam, expedita qui explicabo sit iure neque autem nulla totam adipisci 
+                voluptates laudantium itaque possimus ipsam ut obcaecati rem ab debitis 
+                asperiores reprehenderit. Modi error nobis nesciunt dolor aspernatur neque 
+                dolores adipisci.</p>
+                <button class="btn post-btn" role="button" aria-label="read more">Read More &nbsp;<i class="fas fa-arrow-right"></i></button>
+            </div>
+          </div>
+
+        <hr>
+
+          <!-- Post 2 -->
+          <div class="post-content" data-aos="zoom-in" data-aos-delay="200"> 
+            <div class="post-image"> 
+              <div>
+                <img class="img" src="/assets/blog-posts/supra.jpg" alt="Two Supras and Switzerland">
+              </div>
+              <div class="post-info flex-row"> 
+                <span><i class="fas fa-user text-gray"></i>&nbsp;&nbsp;Oli_Supra</span>
+                <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;October 18, 2021</span>
+                <span>6 Comments</span>
+              </div>
+            </div>
+            <div class="post-title"> 
+              <a href="#">Would you add the Mount Fuji in the background? ;) </a>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Laboriosam, expedita qui explicabo sit iure neque autem nulla totam adipisci 
+                voluptates laudantium itaque possimus ipsam ut obcaecati rem ab debitis 
+                asperiores reprehenderit. Modi error nobis nesciunt dolor aspernatur neque 
+                dolores adipisci.</p>
+                <button class="btn post-btn" role="button" aria-label="read more">Read More &nbsp;<i class="fas fa-arrow-right"></i></button>
+            </div>
+          </div> 
+
+        <hr>
+
+          <!-- Post 3 -->
+          <div class="post-content" data-aos="zoom-in" data-aos-delay="200"> 
+            <div class="post-image"> 
+              <div>
+                <img class="img" src="/assets/blog-posts/rx7.jpg" alt="Madza RX7 on the streets">
+              </div>
+              <div class="post-info flex-row"> <!-- Post infobox -->
+                <span><i class="fas fa-user text-gray"></i>&nbsp;&nbsp;swiss__rx7</span>
+                <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;September 17, 2021</span>
+                <span>8 Comments</span>
+              </div>
+            </div>
+            <div class="post-title"> 
+              <a href="#">Ready for 2022! What about you? </a>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Laboriosam, expedita qui explicabo sit iure neque autem nulla totam adipisci 
+                voluptates laudantium itaque possimus ipsam ut obcaecati rem ab debitis 
+                asperiores reprehenderit. Modi error nobis nesciunt dolor aspernatur neque 
+                dolores adipisci.</p>
+                <button class="btn post-btn" role="button" aria-label="read more">Read More &nbsp;<i class="fas fa-arrow-right"></i></button>
+            </div>
+          </div> 
+          <!-- Blogpost page dial -->
+          <div class="pagination flex-row">
+            <a href="#" role="menuitem"><i class="fas fa-chevron-left" aria-label="previous"></i></a>
+            <a class="pages" href="#" role="menuitem" aria-label="page 1">1</a>
+            <a class="pages" href="#" role="menuitem" aria-label="page 2">2</a>
+            <a class="pages" href="#" role="menuitem" aria-label="page 3">3</a>
+            <a href="#" role="menuitem" aria-label="next"><i class="fas fa-chevron-right"></i></a>
+          </div>
+
+        </div>
+        <aside class="sidebar">
+          <h2 class="title-sidebar">Categories</h2>
+          <div class="category"> <!-- All the important categories -->
+            <ul class="category-list">
+
+              <li class="list-items" data-aos="fade-left" data-aos-delay="100">
+                <a href="#">Group-Meets</a>
+              </li>
+
+              <li class="list-items" data-aos="fade-left" data-aos-delay="200">
+                <a href="#">Event-Meets</a>
+              </li>
+
+              <li class="list-items" data-aos="fade-left" data-aos-delay="300">
+                <a href="#">"Me and you"-Meets</a>
+              </li>
+
+              <li class="list-items" data-aos="fade-left" data-aos-delay="400">
+                <a href="#">Rideout</a>
+              </li>
+
+              <li class="list-items" data-aos="fade-left" data-aos-delay="500">
+                <a href="#">Customizing</a>
+              </li>
+
+              <li class="list-items" data-aos="fade-left" data-aos-delay="600">
+                <a href="#">Random and Others</a>
+              </li>
+
+            </ul>
+          </div>
+          <div class="popular-post"> <!-- All the popular posts -->
+            <h2 class="title-sidebar">Popular Posts</h2>
+
+            <!-- Popular Post 1 -->
+            <div class="post-content" data-aos="flip-up" data-aos-delay="200"> 
+              <div class="post-image"> 
+                <div>
+                  <img class="img" src="/assets/popular-blogposts/sushitime.jpg" alt="Sushi and Modelcar">
+                </div>
+                <div class="post-info flex-row"> <!-- Post infobox -->
+                  <!-- <span><i class="fas fa-user text-gray"></i>&nbsp;&nbsp;swiss__rx7</span> -->
+                  <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;November 2, 2021</span>
+                  <span>9 Comments</span>
+                </div>
+              </div>
+              <div class="post-title"> 
+                <a href="#">Super delicious, no matter which size...</a>   
+              </div>
+            </div>
+            <hr class="sideline">
+            
+            <!-- Popular Post 2 -->
+            <div class="post-content" data-aos="flip-up" data-aos-delay="300"> 
+              <div class="post-image"> 
+                <div>
+                  <img class="img" src="/assets/popular-blogposts/JDM-Meet_Ace.jpg" alt="Ace Cafe Lucerne Meet">
+                </div>
+                <div class="post-info flex-row"> <!-- Post infobox -->
+                  <!-- <span><i class="fas fa-user text-gray"></i>&nbsp;&nbsp;swiss__rx7</span> -->
+                  <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;November 20, 2021</span>
+                  <span>14 Comments</span>
+                </div>
+              </div>
+              <div class="post-title"> 
+                <a href="#">Ace Cafe JDM Meet 2021 - What was going on?</a>  
+              </div>
+            </div>
+            <hr class="sideline"> 
+
+            <!-- Popular Post 3 -->
+            <div class="post-content" data-aos="flip-up" data-aos-delay="400"> 
+              <div class="post-image"> 
+                <div>
+                  <img class="img" src="/assets/popular-blogposts/keytosuccess.jpg" alt="R33 with keychain">
+                </div>
+                <div class="post-info flex-row"> <!-- Post infobox -->
+                  <!-- <span><i class="fas fa-user text-gray"></i>&nbsp;&nbsp;swiss__rx7</span> -->
+                  <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;November 20, 2021</span>
+                  <span>10 Comments</span>
+                </div>
+              </div>
+              <div class="post-title"> 
+                <a href="#">Can you tell which Japanese province this belongs to?</a>  
+              </div>
+            </div>
+            <hr class="sideline">
+
+          </div>
+          <div class="newsletter" data-aos="fade-up" data-aos-delay="300"> <!-- Newsletter part -->
+            <h2 class="title-sidebar">Newsletter</h2>
+            <div class="form-element">
+              <input type="text" class="input-element" label="email" value="email" placeholder="Email">
+              <button class="btn form-btn" role="button" aria-label="subscribe">Subscribe</button>
+            </div>
+          </div>
+
+          <div class="popular-tags"> <!-- Popular tags section -->
+            <h2 class="title-sidebar">Popular Tags</h2>
+            <div class="tags flex-row">
+              <span class="tag" data-aos="flip-up" data-aos-delay="100">JDM</span>
+              <span class="tag" data-aos="flip-up" data-aos-delay="200">JDMSwitzerland</span>
+              <span class="tag" data-aos="flip-up" data-aos-delay="300">GTR</span>
+              <span class="tag" data-aos="flip-up" data-aos-delay="400">R33</span>
+              <span class="tag" data-aos="flip-up" data-aos-delay="500">JDMLove</span>
+              <span class="tag" data-aos="flip-up" data-aos-delay="600">JDMNation</span>
+              <span class="tag" data-aos="flip-up" data-aos-delay="700">lowlife</span>
+              <span class="tag" data-aos="flip-up" data-aos-delay="800">rideout</span>
+              <span class="tag" data-aos="flip-up" data-aos-delay="900">isthatasupra</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-----x---- Site Content (Blog) ----x-------->
+
+  </main>
+
+  <!---x---- MAIN SITE SECTION ----x------------------------------------------------------------------------------>
+  <!-------- FOOTER ----------------------------------------------------------------------------------->
+
+  <footer class="footer">
+    <div class="container"><!-- Four Sections in the footer -->
+      <div class="about-us" data-aos="fade-right" data-aos-delay="200">
+        <h3>About us</h3>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+          Voluptatem voluptatibus debitis quis quaerat molestias officia 
+          incidunt iusto vero consectetur at?</p>
+      </div>
+      <div class="admin" data-aos="fade-right" data-aos-delay="200">
+        <h3>Admin Login</h3>
+        <a href=" #">Login</a>
+      </div> <!-- Formerly NEWSLETTER -->
+      <div class="instagram" data-aos="fade-left" data-aos-delay="200">
+        <h3>Instagram Artworks</h3>
+        <div class="flex-row">
+          <img src="./assets/instagram/thumbcard1.jpg" alt="r33 card art 1">
+          <img src="./assets/instagram/thumbcard2.jpg" alt="r33 card art 2">
+        </div>
+        <div class="flex-row">
+          <img src="./assets/instagram/thumbcard3.jpg" alt="r33 card art 3">
+          <img src="./assets/instagram/thumbcard4.jpg" alt="r33 card art 4">
+        </div>
+      </div>
+      <div class="follow" data-aos="fade-left" data-aos-delay="200">
+        <h3>Follow us</h3>
+        <p>Let us be social!</p>
+        <div>
+          <a href="https://www.instagram.com/jdmaddict_daily/"><i class="fab fa-instagram"></i></a>
+          <a href="https://github.com/Svendolin"><i class="fab fa-github"></i></a>
+          <i class="fab fa-facebook-f"></i>
+          <i class="fab fa-twitter"></i>
+          <i class="fab fa-youtube"></i>
+        </div>
+      </div>
+    </div>
+    <div class="rights flex-row">
+      <h4 class="text-gray">2021 Svendolin Productions™ | All rights reserved ©</h4>
+    </div>
+    <div class="move-up">
+      <span><i class="fas fa-arrow-circle-up fa-2x"></i></span>
+  </div> 
+  </footer>
+
+  
+
+
+  <!----X---- FOOTER ----X-------------------------------------------------------------------------------->
+  
+  
+</body>
+</html>   

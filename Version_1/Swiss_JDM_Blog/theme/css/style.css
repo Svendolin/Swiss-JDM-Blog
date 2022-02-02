@@ -1,0 +1,692 @@
+/* === Small CSS Reset === */
+*{
+  margin: 0;
+  padding: 0;
+}
+*, *::after, *::before{
+  box-sizing: border-box;
+}
+
+/* Custom Fonts for possible use */
+  
+@font-face {
+  font-family: 'myFirstFont';
+  src: url('../theme/fonts/SF_Shai_Fontai_Extended-webfont.woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'mySecondFont';
+  src: url('../theme/fonts/Japan.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'myThirdFont';
+  src: url('../theme/fonts/JAPANBRUSH.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* -------- Variables --------- */
+
+:root {
+
+/* Themed colors https://coolors.co/ */
+--text-gray: #2e3338;
+--text-light: #525252da;
+--bg-color: #0f0f0f;
+--white: #ffffff;
+--cherry: #fa6ebb;
+--sakura: #f8a8c9;
+
+/* Gradient color https://webgradients.com/ */
+
+--sky: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+--light-pink: linear-gradient(120deg, #f1a3c4 0%, #dfa1ee 100%);
+--pink: linear-gradient(120deg, #fd84a2 0%, #cf4585 100%);
+--pink-very-light: linear-gradient(120deg, #fd84a2 0%, #fac0db 100%);
+
+/* Themed fonts (used in this blog) */
+
+--logo: 'Permanent Marker', cursive; /* For logo */
+--linksnbtn: 'Abel', cursive;        /* For Links and Buttons */
+--textntitles: 'Nunito', sans-serif; /* For Text and Titles */
+
+}
+
+/* ----x---- Variables ----x---- */
+/* --------- Global Classes --------- */
+a {
+  text-decoration: none;
+  color: var(--text-gray);
+}
+
+p {
+  font-family: var(--textntitles);
+  color: var(--text-light);
+}
+
+/* Add a flex-row in the html to flex the object... */
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; /* It can collapse perfectly if the size is shrinking */
+}
+
+ul {
+  list-style-type: none;
+}
+
+span {
+  font-family: var(--textntitles);
+  font-size: 1.3rem;
+}
+
+h1 {
+  font-family: var(--textntitles);
+  font-size: 5.5rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-family: var(--textntitles);
+  font-size: 3.4rem;
+  font-weight: 500;
+  color: var(--text-gray);
+}
+
+h3 {
+  font-family: var(--textntitles);
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+button.btn {
+  border: none;
+  border-radius: 2rem;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  font-family: var(--linksnbtn);
+  font-weight: 400;
+  background: var(--pink);
+  color: var(--white);
+  cursor: pointer;
+  border: 1px solid var(--white);
+}
+
+.container {
+  margin: 0 2vw;
+}
+
+.text-gray {
+  color: var(--text-gray);
+}
+
+section .title {
+  text-align: center;
+  padding-top: 3.5rem;
+  font-family: var(--textntitles);
+  font-size: 3.5rem;
+  font-weight: 500;
+  color: var(--text-gray);
+}
+
+section .title-main {
+  font-family: var(--textntitles);
+  font-size: 3rem;
+  font-weight: 500;
+  color: var(--text-gray);
+  margin: 6rem 0 1rem 2rem;
+}
+
+section .title-sidebar {
+  font-family: var(--textntitles);
+  font-size: 3rem;
+  font-weight: 500;
+  color: var(--text-gray);
+  text-align: center;
+  padding-top: 6rem;
+  margin-bottom: 1.5rem;
+}
+
+body {
+  min-height: 100%;
+}
+
+hr {
+  border: 1px solid;
+  color: var(--text-light);
+}
+
+
+/* ----x---- Global Classes ----x---- */
+/* --------- Navigation --------- */
+
+/* Navigation bar */
+.nav {
+  background: var(--white);
+  padding: 0 3rem;
+  height: 0; /*  used to collapse and fold navigation menu */
+  min-height: 5.5vh;
+  overflow: hidden;
+  transition: height 1.2s ease-in-out;
+}
+.nav .nav-menu {
+  justify-content: space-between;
+}
+
+/* Burgerbar  */
+.nav .toggle-collapse {
+  position: absolute;
+  top: 0%;
+  width: 90%;
+  cursor: pointer;
+  display: none;
+}
+
+.nav .toggle-collapse .toggle-icons {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1.6rem 0;
+  margin-right: 1.5rem;
+}
+
+.nav .toggle-collapse .toggle-icons i {
+  font-size: 1.3rem;
+  color: var(--text-gray);
+}
+
+/* xMark of the burgerbar */
+.nav .toggle-collapse .toggle-icons .fa-solid {
+  font-size: 1.7rem;
+  color: var(--text-gray);
+  display: none;
+}
+
+.collapse { /*Defined collapse class from main.js which will hide and open navigation */
+  height: 23rem;
+}
+
+.nav .nav-items {
+  display: flex;
+  margin: 0 8rem 0 0;
+}
+
+/* Center placed nav links */
+.nav .nav-items .nav-link {
+  padding: 1.4rem 2.5rem;
+  position: relative;
+  font-family: var(--linksnbtn);
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+/* hover on nav links */
+.nav .nav-items .nav-link:hover {
+  background: var(--pink);
+  cursor: pointer;
+}
+
+.nav .nav-items .nav-link:hover a {
+  color: var(--white);
+
+}
+
+/* Logo */
+.nav .nav-brand a {
+  font-size: 1.6rem;
+  padding: 1rem 0;
+  display: block;
+  font-family: var(--logo);
+  background: var(--pink);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* border: solid 2px black; */
+}
+
+/* Login Button */
+.nav .login {
+  margin-top: 0.8rem;
+  height: 2.5rem;
+  width: 4rem;
+  font-family: var(--linksnbtn);
+  font-weight: 500;
+  font-size: 1.3rem;
+  padding: 1rem 1rem;
+  border-radius: 10px;
+  border: solid 2px var(--sakura);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav .login a {
+  padding: 0 auto;
+}
+
+/* hover on Login*/
+.nav .login:hover {
+  background: var(--pink);
+  cursor: pointer;
+}
+
+.nav .login:hover a {
+  color: var(--white);
+}
+/* ----x---- Navigation ----x---- */
+
+
+
+
+/* --------- Main Content --------- */
+/* ----- Site title ----- */
+main .site-title {
+  background-image: url('/assets/180sx2.jpg');
+  background-size: cover;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  z-index: 2;
+
+}
+
+main .site-title .site-background {
+  padding-top: 6rem;
+  text-align: center;
+  color: var(--white);
+}
+
+main .site-title span,h1 {
+  margin: 0.3rem;
+}
+
+main .site-title .btn {
+  margin: 1rem;
+  background: var(--pink);
+  transition: all 300ms;
+}
+
+main .site-title .btn:hover {
+  background: transparent;
+  border: 1px solid var(--white);
+  transform: scale(1.1);
+}
+/* --x-- site title --x-- */
+/* ----- News Carousel ----- */
+
+
+
+main .blog {
+  background: url('/assets/sakuratree2.png');
+  background-repeat: no-repeat;
+  background-position: right;
+  height: 80vh;
+  width: 100%;
+  /* background-size: 65%; */
+}
+
+main .blog .blog-post {
+  padding-top: 5rem;
+}
+
+/* Box with one blogpost */
+main .blog-post .blog-content {
+  display: flex; /* To align the content in a new line */
+  flex-direction: column;
+  text-align: center;
+  width: 80%;
+  margin: 3rem 2rem;
+  background: var(--white); /* Comment it out for transparent background */
+  box-shadow: 0 15px 20px rgba(0,0,0,0.2);
+}
+
+/* Text of one newspost */
+main .blog-content .blog-title {
+  padding: 2rem 0;
+}
+
+/* Button of one newspost */
+main .blog-content .btn {
+  padding: 0.5rem 1rem;
+  margin: 1rem 0 0.5rem 0;
+  transition: all 300ms;
+}
+
+main .blog-content .btn:hover {
+  transform: scale(1.2)
+}
+
+/* Text of one newspost */
+main .blog-content span {
+  display: block;
+  font-family: var(--textntitles);
+  font-size: 0.9rem;
+  padding-top: 0.8rem;
+}
+
+/* News Navigation Arrows (nav: true in main.js) */
+
+section .container .owl-nav {
+  position: absolute;
+  top: 0%;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.owl-nav .owl-prev .owl-nav-prev,
+.owl-nav .owl-next .owl-nav-next {
+  color: var(--text-gray);
+  background: transparent;
+  font-size: 2rem;
+}
+
+.owl-theme .owl-nav [class*='owl-']:hover {
+  background: transparent;
+  color: var(--sakura);
+}
+/* ---------------x-- News Carousel --x--------------- */
+/* ---------------------- Site Blog Content ---------------------- */
+
+
+/* Blog post site content */
+main .site-content {
+  display: grid;
+  grid-template-columns: 70% 30%;
+}
+
+main .post-content {
+  width: 100%;
+}
+
+/* Blog Post title text */
+main .site-content .post-content >.post-image, .post-title {
+  padding: 1rem 2rem;
+  position: relative;
+}
+
+main .post-content .post-title a {
+  font-family: var(--textntitles);
+  font-size: 2.2rem;
+  font-weight: 800;
+}
+
+
+/* pink infobox of each post */
+main .site-content .post-content > .post-image .post-info {
+  background: var(--light-pink);
+  padding: 0.3rem 1rem;
+  position: absolute;
+  bottom: 0%;
+  left: 20vw;
+  border-radius: 1rem;
+}
+
+/* pictures of each post */
+main .site-content .post-content > .post-image > div {
+  overflow: hidden;
+}
+
+main .site-content .post-content > .post-image .img {
+  width: 100%;
+  transition: all 800ms ease;
+}
+
+main .site-content .post-content > .post-image .img:hover {
+  transform: scale(1.1);
+}
+
+/* infotext of each post (spacing of each text element */
+main .site-content .post-content > .post-image .post-info span {
+ margin: 0 0.5rem; 
+}
+
+/* Special button design especially for this part */
+main .site-content .post-content .post-title .post-btn {
+  border-radius: 0;
+  padding: 0.7rem 1.5rem;
+  background: var(--pink);
+  margin-top: 2rem;
+  transition: all 300ms;
+}
+
+main .site-content .post-content .post-title .post-btn:hover {
+  transform: scale(1.2);
+}
+
+/* pagination (1/2/3) */
+.site-content .pagination {
+  justify-content: center;
+  color: var(--text-gray);
+  margin: 4rem 0;
+}
+
+.site-content .pagination a {
+  padding: 0.6rem 0.9rem;
+  border-radius: 50%;
+  margin: 0 0.3rem;
+  font-family: var(--linksnbtn);
+  transition: all 300ms;
+}
+
+.site-content .pagination a:hover {
+  transform: scale(1.2);
+}
+
+.site-content .pagination .pages {
+  background: var(--sakura);
+}
+/* -------------x-- Site Blog Content --x------------- */
+/* ------------------ Sidebar ------------------ */
+
+
+/* The general listboxclass above to flex */
+.site-content > .sidebar > .category {
+  display: flex;
+  justify-content: center;
+}
+
+/* The whole list box */
+.site-content > .sidebar .category-list {
+  font-family: var(--textntitles);
+}
+
+/* All the different Category Items */
+.site-content > .sidebar .category-list .list-items {
+  background: var(--pink);
+  padding: 0.4rem 4rem 0.4rem 1rem;
+  margin: 0.8rem 0.9rem;
+  border-radius: 1rem;
+  width: 100%;
+  transition: all 300ms ease;
+}
+
+.site-content > .sidebar .category-list .list-items:hover {
+  transform: translateX(1.2rem);
+  background: var(--pink-very-light);
+}
+
+.site-content > .sidebar .category-list .list-items a {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.site-content .sidebar .popular-post .post-content {
+  padding: 1rem 0;
+}
+
+/* Top spacing above the title "Popular Posts" */
+.site-content .sidebar .popular-post h1 {
+  padding-top: 8rem;
+}
+
+/* Popular Post overwrites */
+/* Overwrite the default property with !important for the popular posts */
+.site-content .sidebar .popular-post .post-info {
+  padding: 0.4rem 0.5rem !important;
+  bottom: 0 !important;
+  left: 1.5rem !important;
+  border-radius: 0 !important;
+  background: white !important;
+}
+
+/* a-tag overwrite the size (Title of a post) */
+.site-content .sidebar .popular-post .post-title a {
+  font-size: 1.6rem;
+}
+
+/* span-tag overwrite the size (comment and date of a post) */
+.site-content .sidebar .post-info span {
+  font-size: 1.2rem;
+}
+
+/* hr especially made for the sideline */
+.sideline {
+  width: 90%;
+  margin-left: 2rem;
+}
+
+/* ---- Newsletter section ---- */
+.site-content .sidebar .newsletter {
+  padding-top: 1rem;
+}
+
+.site-content .sidebar .newsletter .form-element {
+  padding-top: 0.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+/* email input field */
+.site-content .sidebar .newsletter .input-element {
+  width: 80%;
+  height: 3rem;
+  padding: 1rem 0.5rem; 
+  font-family: var(--linksnbtn);
+  font-size: 1.2rem;
+  color: var(--text-gray);
+}
+
+/* Newsletterbutton */
+.site-content .sidebar .newsletter .form-btn {
+  border-radius: 0;
+  padding: 0.8rem 29%;
+  margin: 1rem 0;
+  transition: all 300ms;
+}
+
+.site-content .sidebar .newsletter .form-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Popular tags */
+.site-content .sidebar .popular-tags {
+  padding: 3rem 0;
+}
+
+.site-content .sidebar .popular-tags .tags .tag {
+  background: var(--light-pink);
+  padding: 0.4rem 1rem;
+  color: white;
+  border-radius: 1.5rem;
+  margin: 0.3rem 0.6rem;
+}
+/* ---------------x-- Sidebar --x--------------- */
+/* ----x---- Main Content ----x---- */
+/* ------------------ Footer ------------------ */
+
+footer.footer {
+  height: 100%;
+  background: var(--bg-color);
+  position: relative;
+}
+
+footer.footer .container {
+  display: grid; /* Various ways to define our 4 columns */
+  /* grid-template-columns: 25% 25% 25% 25%; */
+  /* grid-template-columns: 1fr 1fr 1fr 1fr; */
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* div-footer items */
+footer.footer .container > div {
+  flex-grow: 1; /* Specified how much the item will grow inside the flexible items of the container */
+  flex-basis: 0; /* Specifies initial width of the flexible items */
+  padding: 3rem 0.9rem;
+}
+
+footer.footer .container h3 {
+  color: var(--white);
+  margin-bottom: 1.3rem;
+}
+
+footer.footer .container p {
+  margin-bottom: 1.3rem;
+}
+
+footer.footer .container .admin a {
+  font-family: var(--textntitles);
+  color: var(--white);
+  display: inline-block; 
+  transition: all 200ms;
+}
+
+/* Margin works perfectly well with "block" instead of the default "inline" with a, 
+but to hover it right: We need inline-block to solve this problem */
+footer.footer .container .admin a:hover {
+  color: var(--cherry);
+}
+
+footer.footer .instagram div > img {
+  display: inline-block;
+  width: 40%;
+  height: 50%;
+  margin: 0.3rem 0.4rem;
+}
+
+footer.footer .follow div i{
+  color: var(--white);
+  padding: 0rem 0.4rem;
+  transition: all 200ms;
+  font-size: 1.3rem;
+}
+
+footer.footer .follow div i:hover{
+  color: var(--cherry);
+}
+
+footer.footer .rights {
+  justify-content: center;
+  font-family: var(--linksnbtn);
+  padding-bottom: 1rem;
+}
+
+/* Back to top-button */
+
+footer.footer .move-up{
+  position: absolute;
+  right: 6%;
+  top: 50%;
+}
+
+footer.footer .move-up span{
+  color: var(--cherry);
+}
+
+footer.footer .move-up span:hover{
+  color: var(--white);
+  cursor: pointer;
+}
+
+
+
+
+
+
+/* ---------------x-- Footer --x--------------- */
+

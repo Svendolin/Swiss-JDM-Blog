@@ -1,0 +1,97 @@
+/* ----- Viewport less than or equal to 1270px ------ */
+
+@media only screen and (max-width: 1270px) {
+  /* Gives the pink blogpost info section more space while shrinking */
+  .site-content .post-content > .post-image .post-info {
+    left: 2rem !important;
+    bottom: 1.2rem !important;
+    border-radius: 0% !important;
+  }
+
+  /* The comment and datasection will disapper after shrinking */
+  .site-content .sidebar .popular-post .post-info {
+    display: none !important;
+  }
+
+  /* Gives the container colums more space in the footer: From 4 colums to 2 columns */
+  footer.footer .container {
+    grid-template-columns: repeat(2,1fr);
+  }
+
+}
+
+/* --x-- Viewport less than or equal to 1270px --x-- */
+
+/* ----- Viewport less than or equal to 970px ------ */
+
+@media only screen and (max-width: 970px) {
+  .nav .nav-menu, .nav .nav-items {
+    flex-direction: column; /* Menubar and login button will collapse to the next line */
+    margin: 0; /* To eliminate the 8rem margin default value */
+  }
+
+  .nav .toggle-collapse {
+    display: initial; /* Defined default value of the browser */
+  }
+
+  /* main blog content and side content won't be side to side now:
+    - 1) All the post content will be at 100% width at first place
+    - 2) the side content with categories, popular posts and so on will follow up */
+  main .site-content{
+    grid-template-columns: 100%;
+  }
+
+  /* Newsletterelements (input field and button */
+  .site-content .sidebar .newsletter .input-element {
+    width: 50%;
+  }
+  .site-content .sidebar .newsletter .form-btn {
+    padding: 0.8rem 20%;
+  }
+
+  footer.footer .container{
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+}
+
+/* --x-- Viewport less than or equal to 970px --x-- */
+/* ----- Viewport less than or equal to 660px ------ */
+
+@media only screen and (max-width: 660px) {
+  
+  /* the pink blogpost info section should disappear entirely */
+  .site-content .post-content > .post-image .post-info {
+    display: none;
+  }
+
+  /* Removes the back to top button at 660px */
+  footer.footer > .move-up {
+    display: none;
+  }
+}
+
+/* --x-- Viewport less than or equal to 660px --x-- */
+/* ----- Viewport less than or equal to 420px ------ */
+
+@media only screen and (max-width: 420px) {
+  
+  /* Moves the 4 container boxes closer to eachother */
+  footer.footer .container > div {
+    padding: 1rem 0.9rem !important;
+  }
+
+  footer.footer .container .about-us {
+    margin-top: 2rem;
+  }
+
+  footer.footer .rights {
+    margin-top: 4rem !important;
+    text-align: center;
+  }
+
+}
+
+/* --x-- Viewport less than or equal to 420px --x-- */
+
+
