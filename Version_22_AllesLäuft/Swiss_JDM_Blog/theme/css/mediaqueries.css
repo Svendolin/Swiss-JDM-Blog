@@ -1,0 +1,363 @@
+/* ======================= index.php ======================= */
+
+/* ----- Viewport less than or equal to 1270px ------ */
+
+@media only screen and (max-width: 1270px) {
+    /* Gives the pink blogpost info section more space while shrinking */
+    .site-content .post-content>.post-image .post-info {
+        left: 2rem !important;
+        bottom: 1.2rem !important;
+        border-radius: 0% !important;
+    }
+    /* The comment and datasection will disapper after shrinking */
+    .site-content .sidebar .popular-post .post-info {
+        display: none !important;
+    }
+    /* Gives the container colums more space in the footer: From 4 colums to 2 columns */
+    footer.footer .container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* --x-- Viewport less than or equal to 1270px --x-- */
+
+/* ----- Viewport less than or equal to 970px ------ */
+
+@media only screen and (max-width: 970px) {
+    .nav .nav-menu,
+    .nav .nav-items {
+        flex-direction: column;
+        /* Menubar and login button will collapse to the next line */
+        margin: 0;
+        /* To eliminate the 8rem margin default value */
+    }
+    /* Special list item which should be seen in loggedIn mode only */
+    .nav .nav-menu,
+    .nav .tell-your-story {
+        flex-direction: column;
+        /* Menubar and login button will collapse to the next line */
+        margin: 0;
+        /* To eliminate the 8rem margin default value */
+    }
+    .nav .nav-items .nav-link {
+        display: block;
+    }
+    /* Trick: Define the full nav-link area (Home etc) of the a tag to go to the next page */
+    .nav .nav-items .nav-link a {
+        display: inline-block;
+        padding-right: 80%;
+        /* These two moved from .nav-link to .nav-link a */
+    }
+    .nav .toggle-collapse {
+        display: initial;
+        /* Defined default value of the browser */
+    }
+    /* main blog content and side content won't be side to side now:
+    - 1) All the post content will be at 100% width at first place
+    - 2) the side content with categories, popular posts and so on will follow up */
+    main .site-content {
+        grid-template-columns: 100%;
+    }
+    /* Newsletterelements (input field and button */
+    .site-content .sidebar .newsletter .input-element {
+        width: 50%;
+    }
+    .site-content .sidebar .newsletter .form-btn {
+        padding: 0.8rem 20%;
+    }
+    footer.footer .container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+
+/* --x-- Viewport less than or equal to 970px --x-- */
+
+/* ----- Viewport less than or equal to 660px ------ */
+
+@media only screen and (max-width: 660px) {
+    /* the pink blogpost info section should disappear entirely */
+    .site-content .post-content>.post-image .post-info {
+        display: none;
+    }
+    /* Removes the back to top button at 660px */
+    footer.footer>.move-up {
+        display: none;
+    }
+}
+
+
+/* --x-- Viewport less than or equal to 660px --x-- */
+
+/* ----- Viewport less than or equal to 420px ------ */
+
+@media only screen and (max-width: 420px) {
+    /* Moves the 4 container boxes closer to eachother */
+    footer.footer .container>div {
+        padding: 1rem 0.9rem !important;
+    }
+    footer.footer .container .about-us {
+        margin-top: 2rem;
+    }
+    footer.footer .rights {
+        margin-top: 4rem !important;
+        text-align: center;
+    }
+}
+
+
+/* --x-- Viewport less than or equal to 420px --x-- */
+
+
+/* ====x================== index.php ==================x==== */
+
+/* ======================= login.php ======================= */
+
+@media only screen and (max-width: 870px) {
+    /* Container the red circle */
+    .login-container:before {
+        min-height: 1500px;
+        height: 1500px;
+        left: 25%;
+        bottom: 80%;
+        transform: translateX(-50%);
+        right: initial;
+        top: initial;
+        /* Set to their default values */
+        transition: 2s ease-in-out;
+    }
+    /* The whole sign-in and sign-up section (Adjust the top if its not centered enough) */
+    .login-container .signin-signup {
+        width: 100%;
+        left: 50%;
+        top: 90%;
+        transform: translate(-50%, -100%);
+        transition: 1s 0.8s ease-in-out;
+    }
+    /* Container with the sign-in panels */
+    .login-container .panels-container {
+        /* background: green; */
+        grid-template-columns: 1fr;
+        /* Just ONE ROW now */
+        grid-template-rows: 1fr 2fr 1fr;
+        /* 3-row areas: 1fr = Join, 2fr empty, 1fr= Sign */
+    }
+    .panels-container .panel {
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        padding: 2.5rem 8%;
+    }
+    .panels-container .panel h3 {
+        font-size: 1.2rem;
+    }
+    .panels-container .panel p {
+        font-size: 0.9rem;
+        padding: 0.5rem 0;
+    }
+    /* transparent button of the panel */
+    button.btn.transparent {
+        width: 100px;
+        height: 40px;
+        font-size: 1.1rem;
+    }
+    /* Content of the both pannels */
+    .panels-container .panel .content {
+        padding-right: 15%;
+        transition: 0.9s 0.8s ease-in-out;
+    }
+    .image {
+        width: 200px;
+        transition: 0.9s 0.6s ease-in-out;
+    }
+    .panels-container .left-panel {
+        grid-row: 1 / 2;
+        /* From top (because of row) Line 1 to 2 (1fr), 2 to 3 (2fr) = empty */
+    }
+    .panels-container .right-panel {
+        grid-row: 3 / 4;
+        /* From top (because of row) Line 1 to 2 (1fr), 2 to 3 (2fr) = empty */
+    }
+    /* Content and Images of sign-in an sign-up united in the center */
+    .panels-container .right-panel .content,
+    .panels-container .right-panel .image {
+        transform: translateY(300px);
+    }
+    /* The pannel container (red circle) will now move up and down */
+    .login-container.sign-up-mode:before {
+        transform: translate(-50%, 100%);
+        bottom: 32%;
+        right: initial;
+    }
+    .login-container.sign-up-mode .left-panel .image,
+    .login-container.sign-up-mode .left-panel .content {
+        transform: translateY(-300px);
+    }
+    .login-container.sign-up-mode .signin-signup {
+        top: 5%;
+        transform: translate(-50%, 0);
+        left: 50%;
+    }
+    /* Sign-in login error messages */
+    .error-message-log-in p {
+        margin-top: 50rem;
+    }
+    /* Sign-up login (registration) error messages */
+    .login-container .signin-signup form {
+        justify-content: flex-end;
+        padding-bottom: 10rem;
+    }
+    .login-container {
+        min-height: 1200px;
+        /* TODO: Make it bigger if you add more input fields */
+        height: 100vh;
+    }
+}
+
+@media only screen and (max-width: 570px) {
+    .login-container .signin-signup form {
+        padding: 0 1.5rem;
+    }
+    .image {
+        display: none;
+    }
+    .panels-container .panel .content {
+        padding: 0.5rem 1rem,
+    }
+    .login-container:before {
+        bottom: 72%;
+        left: 50%;
+    }
+    .login-container.sign-up-mode:before {
+        bottom: 28%;
+        left: 50%;
+    }
+    /* Sign-up login (registration) error messages */
+    .login-container .signin-signup form {
+        justify-content: center;
+    }
+    .error-message-sign-up {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+
+/* ====x================== login.php ==================x==== */
+
+/* ======================= tellyourstory.php ======================= */
+
+@media only screen and (max-width: 570px) {
+    form.write-a-post {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .input-field-story,
+    .input-field-story.textarea {
+        width: 20rem;
+    }
+}
+
+
+/* ====x================== tellyourstory.php ==================x==== */
+
+/* ======================= memberboard.php ======================= */
+
+@media only screen and (max-width: 1380px) {
+    #memberboard {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        min-height: 85rem;
+    }
+}
+
+@media only screen and (max-width: 950px) {
+    #memberboard {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 1fr);
+        min-height: 130rem;
+    }
+    .card {
+        grid-template-columns: 380px;
+        /* 380 width */
+    }
+}
+
+
+/* ====x================== memberboard.php ==================x==== */
+
+/* ======================= post.php ======================= */
+
+@media only screen and (max-width: 1100px) {
+    .blog-container .blog-box,
+    .blog-heading {
+        width: 100%;
+    }
+}
+
+
+/* ====x================== post.php ==================x==== */
+
+/* ======================= (admin) login.php (admin) ======================= */
+
+@media only screen and (max-width: 450px) {
+    .center {
+        width: 320px;
+    }
+    .btn-special-sign-in,
+    .btn-special-return {
+        padding: 0.8rem 1.3rem;
+    }
+}
+
+
+/* ====x================== (admin) login.php (admin) ==================x==== */
+
+/* ======================= (admin) blogposts.php (admin) ======================= */
+
+
+@media only screen and (max-width: 760px) {
+    .table thead {
+        display: none;
+    }
+    .table, .table tbody, .table tr, .table th, .table td {
+        display: block;
+        width: 100%;
+    }
+    .admin-btn-edit, .admin-btn-delete {
+       width: 4rem;
+       display: inline-block;
+    }
+    .table tr {
+        margin-bottom: 15px;
+    }
+    .table tbody tr td {
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+    }
+    .table td:before {
+        /* MDN Says:
+        Die attr() CSS Funktion wird verwendet, 
+        um einen Wert eines Attributs des ausgewählten Elements 
+        abzurufen und innerhalb des Stylesheets zu verwenden. 
+        Sie kann auch für Pseudoelemente verwendet werden. 
+        In diesem Fall wird der Wert des Attributs seines 
+        ursprünglichen Elements zurückgegeben.
+        */
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 50%;
+        padding-left: 15px;
+        text-align: left;
+        font-weight: 600;
+    }
+}
+
+
+
+
+/* ====x================== (admin) blogposts.php (admin) ==================x==== */

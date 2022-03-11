@@ -1,0 +1,1876 @@
+/* Over here you will find:
+
+  - CSS Styles (index.php / login.php / memberboard.php)
+  
+*/
+
+
+/* ======================= index.php ======================= */
+
+
+/* --------- Navigation --------- */
+
+
+/* Navigation bar */
+
+.nav {
+    background: var(--white);
+    padding: 0 3rem;
+    height: 0;
+    /*  used to collapse and fold navigation menu */
+    height: 4.3rem;
+    overflow: hidden;
+    transition: height 1.2s ease-in-out;
+}
+
+.nav .nav-menu {
+    justify-content: space-between;
+}
+
+
+/* Burgerbar  */
+
+.nav .toggle-collapse {
+    position: absolute;
+    top: 0%;
+    width: 90%;
+    cursor: pointer;
+    display: none;
+}
+
+.nav .toggle-collapse .toggle-icons {
+    display: flex;
+    justify-content: flex-end;
+    margin: 1.3rem 1.3rem 0 0;
+}
+
+
+/* Burgermark symbol */
+
+.nav .toggle-collapse .toggle-icons .menu-toggle-btn {
+    font-size: 1.7rem;
+    color: var(--text-gray);
+}
+
+
+/* X-symbol */
+
+i.menu-toggle-btn .fas .fa-bars .fa-times::before {
+    font-size: 1.9rem;
+    /* color: red; */
+}
+
+.collapse {
+    /*Defined collapse class from main.js which will hide and open navigation */
+    height: 23rem;
+}
+
+.nav .nav-items {
+    display: flex;
+    /* margin: 0 8rem 0 0; */
+}
+
+
+/* Center placed nav links */
+
+.nav .nav-items .nav-link {
+    position: relative;
+    font-family: var(--linksnbtn);
+    font-size: 1.3rem;
+    font-weight: 500;
+    display: inline-block;
+    margin: 0 1rem;
+}
+
+
+/* Trick: Define the full nav-link area (Home etc) of the a tag to go to the next page */
+
+.nav .nav-items .nav-link a {
+    display: inline-block;
+    padding: 1.4rem 1.4rem;
+    /* These two moved from .nav-link to .nav-link a */
+    text-align: center;
+}
+
+
+/* .nav .nav-items .nav-link a.home {
+  margin: 0 2rem;
+} */
+
+
+/* .nav .nav-items .nav-link a.member {
+  margin: 0 2rem;
+} */
+
+
+/* hover on nav links */
+
+.nav .nav-items .nav-link:hover {
+    background: var(--pink);
+    cursor: pointer;
+}
+
+.nav .nav-items .nav-link:hover a {
+    color: var(--white);
+}
+
+
+/* Logo */
+
+.nav .nav-brand a {
+    font-size: 1.6rem;
+    padding: 1rem 0;
+    display: block;
+    font-family: var(--logo);
+    background: var(--pink);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* border: solid 2px black; */
+}
+
+
+/* Login Button */
+
+.nav .login {
+    margin-top: 0.8rem;
+    height: 2.5rem;
+    width: 4rem;
+    font-family: var(--linksnbtn);
+    font-weight: 500;
+    font-size: 1.3rem;
+    border-radius: 10px;
+    border: solid 2px var(--sakura);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav .login a {
+    /* Move these two from div to a such as here to link the whole area */
+    display: inline-block;
+    padding: 1rem 1rem;
+}
+
+
+/* hover on Login*/
+
+.nav .login:hover {
+    background: var(--pink);
+    cursor: pointer;
+}
+
+.nav .login:hover a {
+    color: var(--white);
+}
+
+
+/* ----x---- Navigation ----x---- */
+
+
+/* --------- Main Content --------- */
+
+
+/* ----- Site title ----- */
+
+main .site-title {
+    background-image: url("../../images/q180sx2.jpg");
+    background-size: cover;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+}
+
+main .site-title .site-background {
+    padding-top: 5rem;
+    text-align: center;
+    color: var(--white);
+}
+
+main .site-title span,
+h1 {
+    margin: 0.3rem;
+    margin-bottom: 2rem;
+}
+
+main a.btn {
+    margin: 1rem;
+    background: var(--pink);
+    transition: all 300ms;
+}
+
+main .site-title .btn:hover {
+    background: transparent;
+    border: 1px solid var(--white);
+    transform: scale(1.1);
+}
+
+
+/* --x-- site title --x-- */
+
+
+/* ----- News Carousel ----- */
+
+main .blog {
+    background: url("../../images/sakuratree2.png");
+    background-repeat: no-repeat;
+    background-position: right;
+    /* height: 125vh; */
+    width: 100%;
+    /* background-size: 65%; */
+}
+
+main .blog .blog-post {
+    padding-top: 5rem;
+}
+
+
+/* Box with one blogpost */
+
+main .blog-post .blog-content {
+    display: flex;
+    /* To align the content in a new line */
+    flex-direction: column;
+    text-align: center;
+    width: 80%;
+    margin: 3rem 2rem;
+    background: var(--white);
+    /* Comment it out for transparent background */
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+/* SPECIAL */
+
+
+/* Container of the informative text (overlay) */
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: white;
+}
+
+.blog-content:hover .overlay {
+    opacity: 0.95;
+}
+
+.text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    padding: 1rem;
+    width: 300px;
+}
+
+.text h3 {
+    display: block;
+    color: var(--text-gray);
+    font-size: 20px;
+}
+
+
+/* Text of one newspost */
+
+main .blog-content .blog-title {
+    padding: 2rem 0;
+}
+
+
+/* Button of one newspost */
+
+main .blog-content .btn {
+    padding: 0.5rem 1rem;
+    margin: 1rem 0 0.5rem 0;
+    transition: all 300ms;
+}
+
+main .blog-content .btn:hover {
+    transform: scale(1.2)
+}
+
+
+/* Text of one newspost */
+
+main .blog-content span {
+    display: block;
+    font-family: var(--textntitles);
+    font-size: 0.9rem;
+    padding-top: 0.8rem;
+}
+
+
+/* News Navigation Arrows (nav: true in main.js) */
+
+section .container .owl-nav {
+    position: absolute;
+    top: 0%;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.owl-nav .owl-prev .owl-nav-prev,
+.owl-nav .owl-next .owl-nav-next {
+    color: var(--text-gray);
+    background: transparent;
+    font-size: 2rem;
+}
+
+.owl-theme .owl-nav [class*='owl-']:hover {
+    background: transparent;
+    color: var(--sakura);
+}
+
+
+/* ---------------x-- News Carousel --x--------------- */
+
+
+/* ---------------------- Site Blog Content ---------------------- */
+
+
+/* Blog post site content */
+
+main .site-content {
+    display: grid;
+    grid-template-columns: 70% 30%;
+}
+
+main .post-content {
+    width: 100%;
+}
+
+
+/* Blog Post title text */
+
+main .site-content .post-content>.post-image,
+.post-title {
+    padding: 1rem 2rem;
+    position: relative;
+}
+
+main .post-content .post-title a {
+    font-family: var(--textntitles);
+    font-size: 2.2rem;
+    font-weight: 800;
+}
+
+
+/* pink infobox of each post */
+
+.imagecontainer {
+    overflow: hidden;
+    max-height: 800px;
+}
+
+
+/* .cover {
+  object-fit: cover;
+  width: 50px;
+  height: 100px;
+} */
+
+.imagecontainer img {
+    width: 100%;
+    transition: all 800ms ease;
+    object-fit: cover;
+}
+
+main .site-content .post-content>.post-image .post-info {
+    background: var(--pink-light);
+    padding: 0.3rem 1rem;
+    position: absolute;
+    bottom: 0%;
+    left: 20vw;
+    border-radius: 1rem;
+}
+
+
+/* pictures of each post */
+
+main .site-content .post-content>.post-image>div {
+    overflow: hidden;
+}
+
+main .site-content .post-content>.post-image .img {
+    width: 100%;
+    transition: all 800ms ease;
+}
+
+main .site-content .post-content>.post-image .img:hover {
+    transform: scale(1.1);
+}
+
+
+/* infotext of each post (spacing of each text element */
+
+main .site-content .post-content>.post-image .post-info span {
+    margin: 0 0.5rem;
+}
+
+
+/* Special button design especially for this part */
+
+main .site-content .post-content .post-title a.post-btn {
+    display: block;
+    text-align: center;
+    width: 10rem;
+    font-size: 1.2rem;
+    border-radius: 0;
+    padding: 0.7rem 1rem;
+    background: var(--pink);
+    margin: 1.5rem 0 0 0;
+    transition: all 300ms;
+    font-family: var(--linksnbtn);
+    font-weight: 500;
+}
+
+main .site-content .post-content .post-title a.post-btn:hover {
+    transform: scale(1.2);
+}
+
+
+/* pagination (1/2/3) */
+
+.site-content .pagination {
+    justify-content: center;
+    color: var(--text-gray);
+    margin: 4rem 0;
+}
+
+.site-content .pagination a {
+    padding: 0.6rem 0.9rem;
+    border-radius: 50%;
+    margin: 0 0.3rem;
+    font-family: var(--linksnbtn);
+    transition: all 300ms;
+}
+
+.site-content .pagination a:hover {
+    transform: scale(1.2);
+}
+
+.site-content .pagination .pages {
+    background: var(--sakura);
+}
+
+
+/* -------------x-- Site Blog Content --x------------- */
+
+
+/* ------------------ Sidebar ------------------ */
+
+
+/* The general listboxclass above to flex */
+
+.site-content>.sidebar>.category {
+    display: flex;
+    justify-content: center;
+}
+
+
+/* The whole list box */
+
+.site-content>.sidebar .category-list {
+    font-family: var(--textntitles);
+}
+
+
+/* All the different Category Items */
+
+.site-content>.sidebar .category-list .list-items {
+    background: var(--pink);
+    padding: 0.4rem 4rem 0.4rem 1rem;
+    margin: 0.8rem 0.9rem;
+    border-radius: 1rem;
+    width: 100%;
+    transition: all 300ms ease;
+}
+
+.site-content>.sidebar .category-list .list-items:hover {
+    transform: translateX(1.2rem);
+    background: var(--pink-very-light);
+}
+
+.site-content>.sidebar .category-list .list-items a {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.site-content .sidebar .popular-post .post-content {
+    padding: 1rem 0;
+}
+
+
+/* Top spacing above the title "Popular Posts" */
+
+.site-content .sidebar .popular-post h1 {
+    padding-top: 8rem;
+}
+
+
+/* Popular Post overwrites */
+
+
+/* Overwrite the default property with !important for the popular posts */
+
+.site-content .sidebar .popular-post .post-info {
+    padding: 0.4rem 0.5rem !important;
+    bottom: 0 !important;
+    left: 1.5rem !important;
+    border-radius: 0 !important;
+    background: white !important;
+}
+
+
+/* a-tag overwrite the size (Title of a post) */
+
+.site-content .sidebar .popular-post .post-title a {
+    font-size: 1.6rem;
+}
+
+
+/* span-tag overwrite the size (comment and date of a post) */
+
+.site-content .sidebar .post-info span {
+    font-size: 1.2rem;
+}
+
+
+/* hr especially made for the sideline */
+
+.sideline {
+    width: 90%;
+    margin-left: 2rem;
+}
+
+
+/* ---- Newsletter section ---- */
+
+.site-content .sidebar .newsletter {
+    padding-top: 1rem;
+}
+
+.site-content .sidebar .newsletter .form-element {
+    padding-top: 0.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* email input field */
+
+.site-content .sidebar .newsletter .input-element {
+    width: 80%;
+    height: 3rem;
+    padding: 1rem 0.5rem;
+    font-family: var(--linksnbtn);
+    font-size: 1.2rem;
+    color: var(--text-gray);
+}
+
+
+/* Newsletterbutton */
+
+.site-content .sidebar .newsletter .form-btn {
+    border-radius: 0;
+    padding: 0.8rem 29%;
+    margin: 1rem 0;
+    transition: all 300ms;
+}
+
+.site-content .sidebar .newsletter .form-btn:hover {
+    transform: scale(1.1);
+}
+
+
+/* Popular tags */
+
+.site-content .sidebar .popular-tags {
+    padding: 3rem 0;
+}
+
+.site-content .sidebar .popular-tags .tags .tag {
+    background: var(--pink-light);
+    padding: 0.4rem 1rem;
+    color: white;
+    border-radius: 1.5rem;
+}
+
+
+/* ---------------x-- Sidebar --x--------------- */
+
+
+/* ----x---- Main Content ----x---- */
+
+
+/* ------------------ Footer ------------------ */
+
+footer.footer {
+    height: 100%;
+    background: var(--bg-color);
+    position: relative;
+}
+
+footer.footer .container {
+    display: grid;
+    /* Various ways to define our 4 columns */
+    /* grid-template-columns: 25% 25% 25% 25%; */
+    /* grid-template-columns: 1fr 1fr 1fr 1fr; */
+    grid-template-columns: repeat(4, 1fr);
+}
+
+
+/* div-footer items */
+
+footer.footer .container>div {
+    flex-grow: 1;
+    /* Specified how much the item will grow inside the flexible items of the container */
+    flex-basis: 0;
+    /* Specifies initial width of the flexible items */
+    padding: 3rem 0.9rem;
+}
+
+footer.footer .container h3 {
+    color: var(--white);
+    margin-bottom: 1.3rem;
+}
+
+footer.footer .container p {
+    margin-bottom: 1.3rem;
+}
+
+footer.footer .container .admin a {
+    font-family: var(--textntitles);
+    color: var(--white);
+    display: inline-block;
+    transition: all 200ms;
+}
+
+
+/* Margin works perfectly well with "block" instead of the default "inline" with a, 
+but to hover it right: We need inline-block to solve this problem */
+
+footer.footer .container .admin a:hover {
+    color: var(--cherry);
+}
+
+footer.footer .instagram div>img {
+    display: inline-block;
+    width: 40%;
+    height: 50%;
+    margin: 0.3rem 0.4rem;
+}
+
+footer.footer .follow div i {
+    color: var(--white);
+    padding: 0rem 0.4rem;
+    transition: all 200ms;
+    font-size: 1.3rem;
+}
+
+footer.footer .follow div i:hover {
+    color: var(--cherry);
+}
+
+footer.footer .rights {
+    justify-content: center;
+    font-family: var(--linksnbtn);
+    padding-bottom: 1rem;
+}
+
+
+/* Back to top-button */
+
+footer.footer .move-up {
+    position: absolute;
+    right: 6%;
+    top: 50%;
+}
+
+footer.footer .move-up span {
+    color: var(--cherry);
+}
+
+footer.footer .move-up span:hover {
+    color: var(--white);
+    cursor: pointer;
+}
+
+
+/* ---------------x-- Footer --x--------------- */
+
+
+/* ====x=================== index.php ===================x==== */
+
+
+/* ======================== login.php ======================== */
+
+
+/* Whole login-area (formerly "container" */
+
+.login-container {
+    position: relative;
+    width: 100%;
+    min-height: 115vh;
+    background-color: white;
+    overflow: hidden;
+}
+
+
+/* :before state will cover the sign up section (Red moving ball will cover) */
+
+.login-container:before {
+    content: '';
+    position: absolute;
+    width: 125rem;
+    height: 125rem;
+    border-radius: 50%;
+    background: var(--red);
+    top: -10%;
+    right: 48%;
+    transform: translateY(-50%);
+    z-index: 6;
+    transition: 1.8s ease-in-out;
+}
+
+
+/* Container for the forms */
+
+.login-container .forms-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+
+/* Container with both items, sign-in and sign-up */
+
+.login-container .signin-signup {
+    position: absolute;
+    top: 45%;
+    /* TODO: Change this if you got too many input fields */
+    left: 75%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    display: grid;
+    grid-template-columns: 1fr;
+    z-index: 5;
+    transition: 1s 0.7s ease-in-out;
+}
+
+.login-container .signin-signup form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 0.5rem;
+    overflow: hidden;
+    grid-column: 1 / 2;
+    /* Two column lines in total */
+    grid-row: 1 / 2;
+    /* Two row lines in total */
+    transition: 0.3s 0.9s ease-in-out;
+}
+
+.login-container .signin-signup form.sign-in-form {
+    z-index: 2;
+}
+
+.login-container .signin-signup form.sign-up-form {
+    z-index: 1;
+    opacity: 0;
+}
+
+.signin-signup .title {
+    font-size: 3.2rem;
+    color: var(--text-gray);
+    margin-bottom: 0.6rem;
+}
+
+.input-field {
+    max-width: 23.7rem;
+    width: 100%;
+    height: 55px;
+    background-color: var(--light-grey);
+    margin: 10px 0;
+    border-radius: 55px;
+    display: grid;
+    grid-template-columns: 15% 85%;
+    padding: 0 0.4rem;
+}
+
+
+/* Icons of the Sign In area */
+
+.input-field i {
+    text-align: center;
+    line-height: 55px;
+    color: var(--text-light);
+    font-size: 1.1rem;
+}
+
+
+/* Icons of the Sign In area */
+
+.input-field input {
+    background: none;
+    outline: none;
+    border: none;
+    line-height: 1;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--text-gray);
+}
+
+.input-field input::placeholder {
+    color: var(--text-light);
+    font-weight: 500;
+}
+
+.btn.solid {
+    border: none;
+    border-radius: 2rem;
+    padding: 0.8rem 2rem;
+    font-size: 1.2rem;
+    font-family: var(--linksnbtn);
+    font-weight: 400;
+    background: var(--pink);
+    color: var(--white);
+    cursor: pointer;
+    border: 1px solid var(--white);
+    transition: all 300ms;
+    margin: 0.5rem 0 2rem 0;
+}
+
+.btn.solid:hover {
+    transform: scale(1.2);
+}
+
+.panels-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.panels-container .panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-end;
+    text-align: center;
+    z-index: 7;
+}
+
+.panels-container .panel h3 {
+    font-weight: 600;
+    line-height: 1;
+    font-size: 1.5rem;
+}
+
+.panels-container .panel p {
+    font-size: 0.95rem;
+    padding: 0.7rem 0;
+    color: var(--white)
+}
+
+.panels-container .panel .content {
+    color: var(--white);
+    transition: 0.9s 0.6s ease-in-out;
+}
+
+.panels-container>.left-panel {
+    pointer-events: all;
+    /* We can prevent all clicks ont the panel first and THEN we can click on the form */
+    padding: 3rem 39% 2rem 12%;
+}
+
+.panels-container>.right-panel {
+    pointer-events: none;
+    /* Right-panel shouldnt be clickable */
+    padding: 3rem 12% 2rem 39%;
+}
+
+button.btn.transparent {
+    margin: 0;
+    background: none;
+    padding: 0.5rem 1rem;
+    margin-top: 1rem;
+    transition: all 300ms;
+}
+
+button.btn.transparent:hover {
+    background: var(--white);
+    color: var(--red);
+    transform: scale(1.2);
+    border: none;
+    font-weight: 800;
+}
+
+
+/* To keep the right image away if the left panel is working */
+
+.panels-container .right-panel .content,
+.right-panel .image {
+    transform: translateX(1200px);
+}
+
+.image {
+    width: 100%;
+    transition: 1.1s 0.4s ease-in-out;
+}
+
+
+/* ------------ Animation of the login-container (defined in JS) ------------ */
+
+
+/* The move from sign-in to sign-up */
+
+.login-container.sign-up-mode:before {
+    transform: translate(100%, -50%);
+    right: 52%;
+}
+
+
+/* After the sign-up button is going to be pushed, the content and image will move away to the left */
+
+.login-container.sign-up-mode .left-panel .image,
+.login-container.sign-up-mode .left-panel .content {
+    transform: translateX(-1200px);
+}
+
+.login-container.sign-up-mode .right-panel .content,
+.login-container.sign-up-mode .right-panel .image {
+    transform: translateX(0px);
+}
+
+.login-container.sign-up-mode .left-panel {
+    pointer-events: none;
+    /* Now with the animation the left-panel shouldnt be clickable */
+}
+
+.login-container.sign-up-mode .right-panel {
+    pointer-events: all;
+    /* We can prevent all clicks ont the panel first and THEN we can click on the form */
+}
+
+.login-container.sign-up-mode .signin-signup {
+    left: 25%;
+}
+
+.login-container.sign-up-mode form.sign-in-form {
+    z-index: 1;
+    opacity: 0;
+}
+
+.login-container.sign-up-mode form.sign-up-form {
+    z-index: 2;
+    opacity: 1;
+}
+
+
+/* --- Error Messages done with PHP --- */
+
+
+/* .error-message-log-in {
+  display: flex;
+  justify-content: flex-end;
+} */
+
+.error-message-log-in p {
+    position: relative;
+    display: inline;
+    background-color: red;
+    color: var(--white);
+    border-radius: 12px;
+    margin-top: 6rem;
+    padding: 0.5rem;
+}
+
+
+/* 
+.error-message-log-in p.special {
+  color: white;
+} */
+
+.error-message-sign-up {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.error-message-sign-up p {
+    position: relative;
+    display: inline;
+    background-color: red;
+    color: var(--white);
+    border-radius: 12px;
+    /* border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px; */
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.error-message-sign-up p.successfulsignup {
+    position: relative;
+    display: inline;
+    background-color: rgb(39, 236, 0);
+    color: var(--white);
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+    margin-top: 10rem;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+}
+
+
+/* --- Positive Feedback done with PHP seen at index.php after successful login --- */
+
+.index-intro {
+    display: flex;
+    justify-content: center;
+}
+
+.index-intro p {
+    position: absolute;
+    display: inline;
+    background-color: rgb(39, 236, 0);
+    color: var(--white);
+    border-bottom-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+    padding: 0.5rem;
+}
+
+
+/* ====x=================== login.php ===================x==== */
+
+
+/* ======================== post.php ======================== */
+
+
+/* heading section */
+
+#blog {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05)
+}
+
+.blog-heading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.blog-heading h1 {
+    font-family: var(--textntitles);
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--text-gray);
+}
+
+.blog-heading span {
+    color: var(--cherry);
+    font-size: 2rem;
+}
+
+
+/* blog section */
+
+.blog-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+
+/* Grey BOX where the blog is covered in */
+
+.blog-box {
+    width: 60rem;
+    background: var(--white);
+    /* Comment it out for transparent background */
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
+    margin: 20px;
+}
+
+.blog-img {
+    width: 100%;
+    height: auto;
+}
+
+.blog-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+/* TEXT where the blog is covered in */
+
+#blog .blog-container .blog-text {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 25px 25px 25px;
+    flex-wrap: wrap;
+}
+
+.blog-text span {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    margin: 20px 0px;
+    font-weight: 400;
+}
+
+.blog-text h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+.blog-text p {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: rgb(39, 39, 39);
+}
+
+
+/* Return Button */
+
+.back {
+    display: block;
+    width: 7rem;
+    text-align: center;
+    margin: 3rem auto 2rem auto;
+    transition: all 300ms;
+}
+
+.back:hover {
+    transform: scale(1.2);
+}
+
+
+/* ====x=================== post.php ===================x==== *
+/* ======================== tellyourstory.php ======================== */
+
+
+/*TODO: If the user is LOGGED IN, THIS NAV will show up and you can write  blog entry */
+
+.tell-your-story {
+    /* display:none; */
+    display: flex;
+}
+
+.blog-heading.special {
+    margin-top: 3rem;
+}
+
+#storytellingform {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/*TODO: Change the names here for the STORY STYLE */
+
+.input-field-story {
+    width: 30rem;
+    height: 55px;
+    background-color: var(--light-grey);
+    margin: 10px 0;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 15% 85%;
+    padding: 0 0.4rem;
+}
+
+.input-field-story.textarea {
+    width: 30rem;
+    height: 25rem;
+    background-color: var(--light-grey);
+    margin: 10px 0;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 15% 85%;
+    padding: 0.4rem;
+}
+
+
+/* Icons of the Sign In area */
+
+.input-field-story i {
+    text-align: center;
+    line-height: 55px;
+    color: var(--text-light);
+    font-size: 1.1rem;
+}
+
+
+/* The image field of "Datei auswählen" */
+
+#fld_image {
+    align-self: center;
+}
+
+
+/* Icons of the Sign In area */
+
+.input-field-story input {
+    background: none;
+    outline: none;
+    border: none;
+    line-height: 1;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--text-gray);
+}
+
+.input-field-story input::placeholder {
+    color: var(--text-light);
+    font-weight: 500;
+}
+
+.buttonsection {
+    display: flex;
+    justify-content: center;
+}
+
+
+/* Publish button */
+
+.btn.solid.special.publish {
+    margin-right: 7rem;
+    margin-left: 1rem;
+}
+
+
+/* return button */
+
+.btn.solid.special.return {
+    margin-right: 1rem;
+}
+
+.btn.solid {
+    border: none;
+    border-radius: 2rem;
+    padding: 0.8rem 2rem;
+    font-size: 1.2rem;
+    font-family: var(--linksnbtn);
+    font-weight: 400;
+    background: var(--pink);
+    color: var(--white);
+    cursor: pointer;
+    border: 1px solid var(--white);
+    transition: all 300ms;
+    margin: 0.5rem 0 2rem 0;
+}
+
+.btn.solid:hover {
+    transform: scale(1.2);
+}
+
+
+/* Errormessages for the story publishing */
+
+.error-message-publish {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+}
+
+.error-message-publish p {
+    position: relative;
+    display: inline-block;
+    background-color: red;
+    color: var(--white);
+    border-radius: 12px;
+    /* border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px; */
+    padding: 0.5rem;
+}
+
+.successfulpublish {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+}
+
+.successfulpublish p {
+    position: relative;
+    display: inline-block;
+    background-color: rgb(39, 236, 0);
+    color: var(--white);
+    border-radius: 12px;
+    padding: 0.5rem;
+}
+
+
+/* ====x=================== tellyourstory.php ===================x==== */
+
+
+/* ======================== memberboard.php ======================== */
+
+.memberboard {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 8rem 4rem;  /* Row , Column */
+    align-items: center;
+    background: var(--white);
+    margin: 4rem 0;
+}
+
+.card {
+    display: grid;
+    grid-template-columns: 360px;
+    /* 420 width */
+    grid-template-rows: 280px 235px 40px;
+    grid-template-areas: "image" "text" "stats";
+    font-family: var(--textntitles);
+    border-radius: 18px;
+    background: white;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.7);
+    transition: all 300ms ease-in-out;
+    cursor: pointer;
+    margin: 0 auto;
+}
+
+.card:hover {
+    transform: scale(1.1);
+    /*FIXME: This is broken */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 1.2);
+}
+
+.card-image {
+    grid-area: image;
+    /* background: url("../../images/members/member1.jpg"); */
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background-size: cover;
+    overflow: hidden;
+    max-height: 400px;
+}
+
+.card-image img {
+    max-width: 110%;
+    max-height: 110%
+}
+
+
+/* .card-image2 {
+  grid-area: image;
+  background: url("../../images/members/member2.jpg");
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  background-size: cover;
+} */
+
+
+/* .card-image3 {
+  grid-area: image;
+  background: url("../../images/members/member3.jpg");
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  background-size: cover;
+} */
+
+.card-text {
+    grid-area: text;
+}
+
+.card-text span {
+    font-size: 0.7rem;
+    text-align: center;
+    display: block;
+    margin: 0.5rem 0 1rem 0;
+    color: var(--cherry);
+}
+
+.card-text h2 {
+    font-size: 1.3rem;
+    padding-left: 2rem;
+    font-weight: 600;
+}
+
+.card-text p {
+    font-size: 0.9rem;
+    padding-left: 2.2rem;
+    margin-bottom: 1rem;
+}
+
+.card-stats {
+    grid-area: stats;
+    background: var(--pink-very-light);
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+
+/* Admin or Members */
+
+.stat h3 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-align: center;
+    padding-top: 0.6rem;
+    color: white;
+}
+
+
+/*Sakura Tree*/
+
+#sakura {
+    width: 100%;
+    height: 35rem;
+    background: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* --- Container for banner --- */
+
+.sakura-container {
+    overflow: hidden;
+    position: relative;
+    width: 900px;
+    height: 500px;
+    border-radius: 15px;
+    z-index: 99;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.6);
+    margin: 0 1rem;
+    /* margin: 0 auto; Not necessary because of display flex in the body */
+}
+
+.sakura-title h3 {
+    z-index: 10;
+    position: absolute;
+    left: 8%;
+    top: 35%;
+    margin-top: 30px;
+    color: #c73462;
+    opacity: 1;
+    font-family: var(--logo);
+    font-size: 30px;
+    display: block;
+    width: 20rem;
+}
+
+.tree {
+    z-index: 9;
+    position: absolute;
+    width: 700px;
+    right: -25%;
+    bottom: -35%;
+}
+
+.firstLeaf {
+    z-index: 8;
+    position: absolute;
+    width: 15px;
+    right: 250px;
+    top: 250px;
+    /* opacity: 0;  */
+}
+
+.secondLeaf {
+    z-index: 8;
+    position: absolute;
+    width: 15px;
+    /* Size for the leaves */
+    right: 200px;
+    top: 200px;
+    /* opacity: 0;  */
+}
+
+
+/* Note: This leaf is in front of the tree */
+
+.thirdLeaf {
+    z-index: 10;
+    position: absolute;
+    width: 15px;
+    /* Size for the leaves */
+    right: -20px;
+    top: 300px;
+    /* opacity: 0;  */
+}
+
+.fourthLeaf {
+    z-index: 8;
+    position: absolute;
+    width: 12px;
+    /* Size for the leaves */
+    right: 150px;
+    top: 250px;
+    /* opacity: 0;  */
+}
+
+
+/* Note: This leaf is in front of the tree */
+
+.fifthLeaf {
+    z-index: 10;
+    position: absolute;
+    width: 15px;
+    /* Size for the leaves */
+    right: 200px;
+    top: 250px;
+    /* opacity: 0;  */
+}
+
+
+/* ====x=================== memberboard.php ===================x==== */
+
+
+/* ======================== (ADMIN) login.php (ADMIN) ======================== */
+
+
+/* Section of the Admin Login */
+
+#admin-login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    min-height: 45rem;
+    background: var(--pink-heavy);
+    overflow: hidden;
+}
+
+
+/* Admin Login Box */
+
+.center {
+    width: 400px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+.center h1 {
+    font-family: var(--textntitles);
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--text-gray);
+    text-align: center;
+    padding: 20px 0;
+    border-bottom: 2px solid var(--sakura);
+    margin: 0 40px;
+}
+
+.center form {
+    padding: 0 40px;
+    box-sizing: border-box;
+    height: 15rem;
+}
+
+form .txt_field {
+    position: relative;
+    border-bottom: 2px solid #adadad;
+    margin: 30px 0;
+}
+
+.txt_field input {
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+.txt_field label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    font-family: var(--textntitles);
+    color: var(--text-light);
+    transform: translateY(-50%);
+    font-size: 16px;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.txt_field span::before {
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: var(--sakura);
+    transition: .5s;
+}
+
+
+/* For the "Swosh" Effect */
+
+.txt_field input:focus~label,
+.txt_field input:valid~label {
+    top: -5px;
+    color: var(--sakura);
+}
+
+.txt_field input:focus~span::before,
+.txt_field input:valid~span::before {
+    width: 100%;
+}
+
+
+/* Area of the sign in and return button */
+
+.buttonarea {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+    height: 80px;
+}
+
+.btn-special-sign-in,
+.btn-special-return {
+    border: none;
+    border-radius: 2rem;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    font-family: var(--linksnbtn);
+    font-weight: 400;
+    background: var(--pink);
+    color: var(--white);
+    cursor: pointer;
+    transition: all 300ms;
+}
+
+.btn-special-sign-in:hover,
+.btn-special-return:hover {
+    transform: scale(1.2);
+}
+
+
+/* ====x=================== (ADMIN) login.php (ADMIN) ===================x==== */
+
+
+/* ======================== (ADMIN) index.php (ADMIN) ======================== */
+
+
+/* Control Section */
+
+#admin-control {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    min-height: 92vh;
+    background: var(--pink-heavy);
+}
+
+
+/* Box for Blog and Profile Management */
+
+.controlbox {
+    max-width: 500px;
+    height: 350px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    transition: all 300ms ease-in-out;
+    margin: 1.5rem;
+}
+
+:hover.controlbox {
+    transform: scale(1.1);
+}
+
+.controlbox h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    padding: 1rem 3rem 0 3rem;
+    text-align: center;
+}
+
+.controlbox .fas.fa-book,
+.controlbox .fas.fa-user-edit,
+.controlbox .fas.fa-wrench {
+    font-size: 2.5rem;
+}
+
+.controlbox h2 {
+    font-size: 1.1rem;
+    font-weight: 300;
+    text-align: center;
+}
+
+.btn-edit {
+    border-radius: 2rem;
+    padding: 0.8rem 2rem;
+    font-size: 1.2rem;
+    font-family: var(--linksnbtn);
+    font-weight: 400;
+    background: var(--pink);
+    color: var(--white);
+    cursor: pointer;
+}
+
+:hover.btn-edit {
+    background: chartreuse;
+    color: var(--text-gray);
+}
+
+footer.footer .admin-rights {
+    justify-content: center;
+    font-family: var(--linksnbtn);
+    padding: 1rem;
+}
+
+
+/* ====x=================== (ADMIN) index.php (ADMIN) ===================x==== */
+
+/* ======================== (ADMIN) blogposts.php (ADMIN) ======================== */
+
+.table-container {
+    padding: 0 5%;
+    margin: 40px auto 0;
+}
+
+h1.heading {
+    font-family: var(--textntitles);
+    font-size: 3.2rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--white);
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.informationzone {
+    display: flex;
+    justify-content: center;
+}
+
+h2.info {
+    font-family: var(--textntitles);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--white);
+    text-align: left;
+    margin-bottom: 40px;
+    line-height: 30px;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse; /* (default: separate - Borders are collapsed into a single border when possible (border-spacing and empty-cells properties have no effect) */
+}
+
+.table thead {
+    background-color: var(--darkcherry);
+}
+
+.table thead tr th {
+    font-size: 1.3rem;
+    font-weight: 600;
+    font-family: var(--textntitles);
+    letter-spacing: 0.5px;
+    color: var(--white);
+    opacity: 1;
+    padding: 12px 20px;
+    border: 1px solid white;
+}
+
+.table tbody tr td {
+    background-color: rgb(77, 34, 34);
+    font-size: 1.3rem;
+    font-weight: 400;
+    font-family: var(--linksnbtn);
+    letter-spacing: 0.5px;
+    color: var(--white);
+    opacity: 1;
+    padding: 12px 20px;
+    text-align: center;
+    border: 1px solid white;
+}
+
+.admin-btn-edit, .admin-btn-delete {
+    display: block;
+    border-radius: 2rem;
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+    font-family: var(--linksnbtn);
+    font-weight: 400;
+    text-align: center;
+    background: var(--pink);
+    color: var(--white);
+    cursor: pointer;
+    border: 1px solid var(--white);
+    transition: all 300ms ease-in-out;
+}
+
+:hover.admin-btn-edit {
+    background: greenyellow;
+    color: black;
+}
+
+:hover.admin-btn-delete {
+    background: red;
+}
+
+.returnfield {
+    height: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-return {
+    border-radius: 2rem;
+    padding: 0.8rem 1.3rem;
+    font-size: 1.2rem;
+    font-family: var(--linksnbtn);
+    font-weight: 400;
+    background: var(--pink);
+    color: var(--white);
+    cursor: pointer;
+    border: 1px solid var(--white);
+    transition: all 300ms ease-in-out;
+    margin: 40px;
+}
+
+:hover.btn-return {
+    background: var(--white);
+    color: black;
+    transform: scale(1.2);
+}
+/* ====x=================== (ADMIN) blogposts.php (ADMIN) ===================x==== */
