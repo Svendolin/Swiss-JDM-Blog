@@ -1,0 +1,7 @@
+Which branches are deployed in this project?
+
+(master) = Masterbranch
+
+(designstuff) = Working Steps in case of designstuff
+
+(sessions) = Working Steps in case of sessions
