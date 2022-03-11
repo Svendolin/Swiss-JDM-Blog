@@ -5,3 +5,7 @@ Which branches are deployed in this project?
 (designstuff) = Working Steps in case of designstuff
 
 (sessions) = Working Steps in case of sessions
+
+(stf) = STF = steps to finish (last processes)
+
+(adjustments) = Additional adjustments AFTER our lecturer's advices
