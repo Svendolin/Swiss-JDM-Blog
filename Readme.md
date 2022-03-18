@@ -134,8 +134,10 @@ Each user should provide the following information via registration form in orde
 ***
 ## FAQs ✅
 ***
-0 Questions have been asked, 0 answers have been given, 0 changes have additionally been made.
+3 Questions have been asked, 3 answers have been given, 3 changes have additionally been made.
 
-| Questions | Anwers | Changes |
+| Question | Anwer | Changes |
 |:--------------|:-------------:|--------------:|
-| 0 | 0 | 0 |
+| for="" from label should match with id="" from input? | YES | YES |
+| Do I always have to write an input field WITH a label? | YES (you can leave it empty too if you wish) | YES |
+| name="" of an input field is used for the isset()-Affenschwanz-Durchlauf? | YES | YES |

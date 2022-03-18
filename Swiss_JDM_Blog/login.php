@@ -287,14 +287,14 @@ if (isset($_POST['name']) && isset($_POST['uid']) && isset($_POST['car']) && iss
         <!-- NAME INPUT FIELD -->
         <div class="input-field">
           <i class="fas fa-file-signature"></i>
-          <!-- <label for="fld_name">Familyname and Surename:</label> -->
+          <label for="fld_name"></label>
           <input type="text" name="name" id="fld_name" value="" placeholder="Full Name (e.g. Ralf Random)"> <!-- The name decides what this input type does for the user -->
         </div>
 
         <!-- USERNAME INPUT FIELD -->
         <div class="input-field">
           <i class="fas fa-user"></i>
-          <!-- <label for="fld_uid">Username:</label> -->
+          <label for="fld_uid"></label>
           <input type="text" name="uid" id="fld_uid" value="" placeholder="Username">
         </div>
 
@@ -308,7 +308,7 @@ if (isset($_POST['name']) && isset($_POST['uid']) && isset($_POST['car']) && iss
         <!-- CAR INPUT FIELD -->
         <div class="input-field">
           <i class="fas fa-car"></i>
-          <!-- <label for="fld_car">Car:</label> -->
+          <label for="fld_car"></label>
           <input type="text" name="car" id="fld_car" value="" placeholder="Your Car">
         </div>
 
@@ -326,28 +326,28 @@ if (isset($_POST['name']) && isset($_POST['uid']) && isset($_POST['car']) && iss
         <!-- STATE INPUT FIELD -->
         <div class="input-field">
           <i class="fas fa-house"></i>
-          <!-- <label for="fld_state">State:</label> -->
+          <label for="fld_state"></label>
           <input type="text" name="state" id="fld_state" value="" placeholder="Your State (e.g. Aargau)">
         </div>
 
         <!-- EMAIL INPUT FIELD -->
         <div class="input-field">
           <i class="fas fa-envelope"></i>
-          <!-- <label for="fld_email">Email:</label> -->
+          <label for="fld_email"></label>
           <input type="text" name="email" id="fld_email" value="" placeholder="Email">
         </div>
 
         <!-- PASSWORD INPUT FIELD -->
         <div class="input-field">
           <i class="fas fa-lock"></i>
-          <!-- <label for="fld_pwd">Passwort:</label> -->
+          <label for="fld_pwd"></label>
           <input type="password" name="pwd" id="fld_pwd" value="" placeholder="Password">
         </div>
 
         <!-- PASSWORD-REPEAT INPUT FIELD -->
         <div class="input-field">
           <i class="fas fa-lock"></i>
-          <!-- <label for="fld_pwdrepeat">Repeat Passwort:</label> -->
+          <label for="fld_pwdrepeat"></label>
           <input type="password" name="pwdrepeat" id="fld_pwdrepeat" value="" placeholder="Repeat Password">
         </div>
 
