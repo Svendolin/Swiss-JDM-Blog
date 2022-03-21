@@ -112,6 +112,125 @@ Each user should provide the following information via registration form in orde
 <br />
 <br />
 
+## &nbsp;Important Coding Experiences I've had / made in this project: 📈
+***
+
+**1) Show content depending on whether the user is logged in or not.**
+```php
+/* --- Is the user LOGGED IN? If yes, let him SHOW THIS: --- */
+// <div>
+  <?php 
+    // Check if this session variable exist (which is logically only, if the user is logged in):  
+    if (isset($_SESSION["useruid"])) {  // ...If so, the user is logged in! (btw useruid is the referenced username from functions.inc.php IN ZEILE 139)
+       echo '<div class="login text-gray">
+              <a href="logout.php">Logout</a>
+            </div>'; // (Logoutbutton)
+    }
+    // Is the user NOT LOGGED IN? Show THIS INSTEAD:
+    else {
+      echo '<div class="login text-gray">
+              <a href="login.php">Login</a>
+            </div>'; // (Loginbutton)
+    }
+  ?>
+//</div>
+    
+```
+
+**2) Welcome message in a section of index.php ("successful error handler")**
+```php
+// <section class="index-intro">
+    <?php
+    // Check if this session variable exist (which is logically only, if the user is logged in):  
+    if (isset($_SESSION["useruid"])) {
+      echo "<p><i class='fas fa-check-circle'></i>  こんにちは! Welcome, " . filter_var($_SESSION["useruid"], FILTER_SANITIZE_STRING) . "!</p>"; // echo "" shows stuff, ".." in between rewrites PHP stuff
+    }
+    ?>
+// </section>
+```
+
+**3) Error Messages from login.php ("Error handlers")**
+```php
+// <div class="error-message-log-in">
+    <?php
+    // PHP Error Input Messages connected to login.inc.php -->
+    if (isset($_GET["error"])) {
+      if ($_GET["error"] == "emptyinputlogin") {
+         echo "<p><i class='fas fa-exclamation-circle'></i>  Please fill all sign-in fields!</p>";
+      } else if ($_GET["error"] == "wronglogin") { // Error handler in functions.inc.php
+         echo "<p><i class='fas fa-exclamation-circle'></i>  Sign-in information is incorrect!</p>";
+      } // NOTE: Positive feedback will be directly shown at index.php
+    }
+    ?>
+// </div>
+```
+
+**4) SESSION: Kick users out of their session if they are inactive after a certain time.**
+```php
+/* ---------->>>>>>>>>> index.php at the very top <<<<<<<<<<<----------- */
+<?php
+require_once('../includes/config.php');        // Serverconfiguration that apply to the whole project
+require_once('../includes/mysql-connect.php'); // Initializing the mysql database connection
+require_once('../includes/functions.inc.php'); // functions which refers to session_init() and session_check()
+
+// ----- Users are allowed to see this content when they're logged in ONLY ----- //
+session_init();
+// $usertype = $_POST["admin_usertype"];
+$isLoggedIn = sessioncheck();
+  if($isLoggedIn == false){ 
+    // if($usertype !== 1)
+	// schüztt dieses Script vor Zurgriff ohne Login
+	header("location: ../admin/login.php"); 
+	exit;
+  }
+  // --x-- Users are allowed to see this content when they're logged in ONLY --x-- // 
+?>
+
+/* ---------->>>>>>>>>> function.inc.php <<<<<<<<<<<----------- */
+
+function session_init(){
+	// session_name(CUSTOM_SESSIONNAME); // Changes the name of the session cookie, not active here
+	session_start();// Initialized a session_start
+	// session_regenerate_id(); // Changes the value of the session ID and cookie each time, not active here
+}
+
+
+function sessioncheck(){
+	$session_laufzeit = SESSION_EXPIRY*60; // config defined at 3*60 = 60 seconds timeout
+	
+	
+	// Check whether the user agent is still the same as when logging in.
+	if( $_SESSION['login_useragent'] !== $_SERVER['HTTP_USER_AGENT'] ){
+		$_SESSION['loginstatus'] = false;
+	}
+
+	// check when the user was last active
+	if( $_SESSION['lastactivity'] < time()-$session_laufzeit ){
+		$_SESSION['loginstatus'] = false;
+	}
+
+	// check if the visitor is logged in, only then the page may be displayed
+	if( $_SESSION['loginstatus'] !== true ){
+		//  if the session does not exist or the timestamp is further back than the permitted runtime (= no access)...
+			
+		// Log out (reset session)
+		setcookie (session_name(), null, -1, '/');
+		session_destroy();
+		session_write_close();
+		
+		// redirect to the login
+		return false;
+	}
+	
+	session_regenerate_id(); // new ID for my session - hacker can no longer use the old one, if he has it.
+	$_SESSION['lastactivity'] = time(); 
+	return true; 
+}
+```
+
+<br />
+<br />
+
 ***
 ## License
 ***
