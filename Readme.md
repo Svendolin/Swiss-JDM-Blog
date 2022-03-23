@@ -151,7 +151,7 @@ Each user should provide the following information via registration form in orde
 
 **3) Error Messages from login.php ("Error handlers")**
 ```php
-// <div class="error-message-log-in">
+  //<div class="error-message-log-in">
     <?php
     // PHP Error Input Messages connected to login.inc.php -->
     if (isset($_GET["error"])) {
@@ -162,7 +162,9 @@ Each user should provide the following information via registration form in orde
       } // NOTE: Positive feedback will be directly shown at index.php
     }
     ?>
+   //</div>
     
+    <?php
     // Zugehörige Funktion aus function.inc.php:
     
     function emptyInputLogin($username, $pwd) {
@@ -174,8 +176,9 @@ Each user should provide the following information via registration form in orde
 		$result = false;
 	}
 	return $result;
-}
-// </div>
+    }
+    ?>
+
 ```
 
 **4) SESSION: Kick users out of their session if they are inactive after a certain time.**
