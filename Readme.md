@@ -162,6 +162,19 @@ Each user should provide the following information via registration form in orde
       } // NOTE: Positive feedback will be directly shown at index.php
     }
     ?>
+    
+    // Zugehörige Funktion aus function.inc.php:
+    
+    function emptyInputLogin($username, $pwd) {
+
+	if (empty($username) || empty($pwd)) {
+		$result = true;
+	}
+	else {
+		$result = false;
+	}
+	return $result;
+}
 // </div>
 ```
 
