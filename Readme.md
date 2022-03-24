@@ -90,23 +90,23 @@ Each user should provide the following information via registration form in orde
 ***
 
 
-|Folder   |Content  |
-| ---   | ---   |
-|admin| Admin area (index.php) to delete and modify user profiles (user.php) and blogposts (blogposts.php) |
-|blogpost_images|Local storage of blogpost images (temporary folder)|
-|favicon|All favicon symbols for each devices|
-|images|Image folder to storage all the used images for this project|
-|includes|All inc files concerning included header and footer (html), database config (config.php) and mysql connections(mysql-connect.php) as well as functions (functions.inc.php) for the login and signup|
-|passwordstuff| Passwords and usernames to login with the matching profile|
-|theme|Includes the css folder with all the styles, fonts folder with additional fonts and javascript for the logical part|
-|user_images|Local storage of user images (temporary folder)|
-|index.php| Main page |
-|login.php|Sign in and Sign up area |
-|logout.php| Section to destroy the logged in session |
-|memberboard.php| Displayed User-Gallery|
-|post.php| Full review of a selected blogpost matching with their ID|
-|swiss_jdm_blog.sql| Exported Database |
-|tellyourstory.php| Area where users can write blogposts |
+| Folder             | Content                                                                                                                                                                                             |
+| ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| admin              | Admin area (index.php) to delete and modify user profiles (user.php) and blogposts (blogposts.php)                                                                                                  |
+| blogpost_images    | Local storage of blogpost images (temporary folder)                                                                                                                                                 |
+| favicon            | All favicon symbols for each devices                                                                                                                                                                |
+| images             | Image folder to storage all the used images for this project                                                                                                                                        |
+| includes           | All inc files concerning included header and footer (html), database config (config.php) and mysql connections(mysql-connect.php) as well as functions (functions.inc.php) for the login and signup |
+| passwordstuff      | Passwords and usernames to login with the matching profile                                                                                                                                          |
+| theme              | Includes the css folder with all the styles, fonts folder with additional fonts and javascript for the logical part                                                                                 |
+| user_images        | Local storage of user images (temporary folder)                                                                                                                                                     |
+| index.php          | Main page                                                                                                                                                                                           |
+| login.php          | Sign in and Sign up area                                                                                                                                                                            |
+| logout.php         | Section to destroy the logged in session                                                                                                                                                            |
+| memberboard.php    | Displayed User-Gallery                                                                                                                                                                              |
+| post.php           | Full review of a selected blogpost matching with their ID                                                                                                                                           |
+| swiss_jdm_blog.sql | Exported Database                                                                                                                                                                                   |
+| tellyourstory.php  | Area where users can write blogposts                                                                                                                                                                |
 
 
 <br />
@@ -165,19 +165,44 @@ Each user should provide the following information via registration form in orde
    //</div>
     
     <?php
-    // Zugehörige Funktion aus function.inc.php:
+    // ---------- Zugehörige Funktion aus function.inc.php: ---------- //
     
     function emptyInputLogin($username, $pwd) {
 
-	if (empty($username) || empty($pwd)) {
-		$result = true;
-	}
-	else {
-		$result = false;
-	}
-	return $result;
+	  if (empty($username) || empty($pwd)) {
+	  	$result = true;
+	  }
+	  else {
+		  $result = false;
+	  }
+	  return $result;
     }
     ?>
+
+    // ---------- Zugehöriger Affenschwanz-Check aus login.inc.php ---------- //
+
+    if (isset($_POST["submit-sign-in"])) {//Submit-Button aus dem Formular
+
+  // Daten aus der URL ziehen
+  $username = $_POST["uid"];
+  $pwd = $_POST["pwd"];
+
+  require_once('config.php'); // Formerly "dbh.inc.php"
+  require_once('mysql-connect.php');
+  require_once('functions.inc.php');
+
+ // Dieser Fall hier (IF-Statement) wird eintreffen, wenn ein Fehler passiert:
+  if (emptyInputLogin($username, $pwd) === true) {
+    header("location: ../login.php?error=emptyinputlogin");
+		exit();
+  }
+
+  loginUser($conn, $username, $pwd);
+
+} else {
+	header("location: ../login.php");
+  // exit(); (Erfolgreiches Ende)
+}
 
 ```
 
@@ -271,8 +296,8 @@ function sessioncheck(){
 ***
 3 Questions have been asked, 3 answers have been given, 3 changes have additionally been made.
 
-| Question: | Anwer: | corrected? |
-|:--------------|:-------------:|:--------------:|
-| Does ``for=""`` from label should match with ``id=""`` from input? | YES | YES |
-| Do I always have to write an input field WITH a label? | YES (you can leave it empty too if you wish) | YES |
-| Is: ``name=""`` of an input field is used for the isset()-Affenschwanz-Durchlauf? | YES | YES |
+| Question:                                                                         |                    Anwer:                    | corrected? |
+| :-------------------------------------------------------------------------------- | :------------------------------------------: | :--------: |
+| Does ``for=""`` from label should match with ``id=""`` from input?                |                     YES                      |    YES     |
+| Do I always have to write an input field WITH a label?                            | YES (you can leave it empty too if you wish) |    YES     |
+| Is: ``name=""`` of an input field is used for the isset()-Affenschwanz-Durchlauf? |                     YES                      |    YES     |
