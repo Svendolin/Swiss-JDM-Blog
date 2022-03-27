@@ -272,6 +272,14 @@ function sessioncheck(){
 }
 ```
 
+**5) How to use < input > and < label > fields correctly:**
+```php
+<div>
+	<label for="vorname">Vorname</label> // for="" des Labels zugehörig zur id="" des Inputs
+	<input type="text" id="vorname" name="vorname" value="<?=$vornameValue?>"><br> // name="" wichtig für Affenschwanz Duchgang / value="" PHP Inhalte aus Datenbank anzeigen
+</div>
+```
+
 <br />
 <br />
 
