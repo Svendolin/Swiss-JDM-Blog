@@ -151,9 +151,12 @@ Each user should provide the following information via registration form in orde
 
 **3) Error Messages from login.php ("Error handlers")**
 ```php
+
+// ---------- Error Messages in LOGIN.PHP (Ort, wo wir diese Meldungen ausgebe werden): ---------- //
+
   //<div class="error-message-log-in">
     <?php
-    // PHP Error Input Messages connected to login.inc.php -->
+    // PHP Error Input Messages: -->
     if (isset($_GET["error"])) {
       if ($_GET["error"] == "emptyinputlogin") {
          echo "<p><i class='fas fa-exclamation-circle'></i>  Please fill all sign-in fields!</p>";
@@ -165,7 +168,7 @@ Each user should provide the following information via registration form in orde
    //</div>
     
     <?php
-    // ---------- Zugehörige Funktion aus function.inc.php: ---------- //
+    // ---------- Zugehörige Funktion aus FUNCTION.INC.PHP: ---------- //
     
     function emptyInputLogin($username, $pwd) {
 
@@ -179,7 +182,7 @@ Each user should provide the following information via registration form in orde
     }
     ?>
 
-    // ---------- Zugehöriger Affenschwanz-Check aus login.inc.php ---------- //
+    // ---------- Zugehöriger Affenschwanz-Check aus LOGIN.INC.PHP ---------- //
 
     if (isset($_POST["submit-sign-in"])) {//Submit-Button aus dem Formular
 
