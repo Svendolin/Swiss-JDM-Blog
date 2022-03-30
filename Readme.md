@@ -167,9 +167,10 @@ Each user should provide the following information via registration form in orde
     ?>
    //</div>
     
-    <?php
+    
     // ---------- Zugehörige Funktion aus FUNCTION.INC.PHP: ---------- //
     
+    <?php
     function emptyInputLogin($username, $pwd) {
 
 	  if (empty($username) || empty($pwd)) {
@@ -232,6 +233,7 @@ $isLoggedIn = sessioncheck();
 
 /* ---------->>>>>>>>>> function.inc.php <<<<<<<<<<<----------- */
 
+<?php
 function session_init(){
 	// session_name(CUSTOM_SESSIONNAME); // Changes the name of the session cookie, not active here
 	session_start();// Initialized a session_start
@@ -270,6 +272,7 @@ function sessioncheck(){
 	$_SESSION['lastactivity'] = time(); 
 	return true; 
 }
+?>
 ```
 
 **5) How to use < input > and < label > fields correctly:**
