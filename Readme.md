@@ -183,7 +183,7 @@ Each user should provide the following information via registration form in orde
     ?>
 
     // ---------- Zugehöriger Affenschwanz-Check aus LOGIN.INC.PHP ---------- //
-
+    <?php
     if (isset($_POST["submit-sign-in"])) {//Submit-Button aus dem Formular
 
   // Daten aus der URL ziehen
@@ -206,7 +206,7 @@ Each user should provide the following information via registration form in orde
 	header("location: ../login.php");
   // exit(); (Erfolgreiches Ende)
 }
-
+?>
 ```
 
 **4) SESSION: Kick users out of their session if they are inactive after a certain time.**
