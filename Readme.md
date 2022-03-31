@@ -283,6 +283,29 @@ function sessioncheck(){
 </div>
 ```
 
+
+**6) action="" Attribute - Correct Usage**
+```html
+  <form method="post" action="suchen.php"> <!-- action="" Attribut auf suchen.php, übermittelte Infos werden dorhin übertragen -->
+		<input type="text" name="search" id="search" value="<?=$searchStr?>"><br><br>
+		<button type="submit" name="go">Suchen</button>
+	</form>
+  <!-- -
+[DEU] Ein PHP-Formular-Aktionsattribut gibt den Ort an, 
+an den die von den Benutzern übermittelten Informationen übertragen werden. 
+Sie können das Attribut so setzen, dass die Informationen an eine Website oder eine Datei 
+übermittelt werden. PHP get und PHP post sind superglobale Methoden, d. h. Sie können sie überall 
+in Ihrem Skript verwenden. Beide Methoden senden die von den Benutzern angegebenen Daten an den Server.
+
+[ENG] A PHP form action attribute specifies the location to transfer the submitted users' information. 
+You can set the attribute to deliver information to a website or a file. PHP get and PHP 
+post are superglobal methods, meaning you can use them anywhere in your script. They 
+both send the data users provide to the server.
+
+-->
+```
+
+
 <br />
 <br />
 
